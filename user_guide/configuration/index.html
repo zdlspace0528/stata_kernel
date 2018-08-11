@@ -439,22 +439,28 @@
                 
                 
                 <h1 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h1>
-<p>The configuration file is named <code>.stata_kernel.conf</code> and is located in your home directory. On Windows, this attempts to find the path to your Stata executable. Otherwise, you need to set the path to your Stata executable before running the kernel.</p>
+<p>The configuration file is named <code>.stata_kernel.conf</code> and is located in your home
+directory. You can change any of the package's settings by opening the file and
+changing the <code>value</code> of any line of the form</p>
+<div class="codehilite"><pre><span></span>configuration_setting = value
+</pre></div>
+
 <ul>
+<li><code>stata_path</code>: the path to your Stata executable. The <a href="../install/#package-install">install step</a> should have found your executable if you installed it in the standard location. If you receive a warning during the install step, you'll need to manually find the location of Stata and add it to this file.</li>
 <li>
-<p><code>stata_path</code>: The path to your Stata executable.</p>
-<p>On Mac, the default installation is in a place like
-<div class="codehilite"><pre><span></span>/Applications/Stata/StataSE.app/Contents/MacOS/
-</pre></div></p>
-<p>There are two executables: <code>StataSE</code> and <code>stata-se</code>. The former opens the GUI
-and should be used if you choose <code>automation</code> mode, while the latter opens the
-console and should be used if you choose <code>console</code> mode.</p>
+<p><code>execution_mode</code>: For macOS users, this allows for setting the method in which <code>stata_kernel</code> communicates with Stata. <code>automation</code> uses <a href="https://www.stata.com/automation/">Stata Automation</a> while <code>console</code> controls the console version of Stata.</p>
+<p><code>console</code> is the default because it allows for multiple independent sessions
+of Stata to run at the same time. <code>automation</code> may be useful if you wish to
+browse the data interactively with <code>browse</code>.</p>
+<p>On Windows, all communication with Stata happens through Stata Automation,
+and on Linux/Unix all communication happens through the console.</p>
 </li>
 <li>
-<p><code>execution_mode</code>: This can be set to <code>automation</code> or <code>console</code>, and is the manner in which this kernel talks to Stata. <code>automation</code> uses Stata Automation to communicate to Stata while <code>console</code> controls the console version of Stata. <code>automation</code> is only available on Windows or macOS. <code>console</code> is only available on macOS or Linux. On macOS, <code>automation</code> is the preferred option, though may have more bugs at the moment than <code>console</code>.</p>
+<p><code>cache_directory</code>: the directory for the kernel to store temporary log files and graphs. By default, this is <code>~/.stata_kernel_cache</code>, where <code>~</code> means your home directory. You may wish to change this location if, for example, you're working under a Data Use Agreement where all related files must be stored in a specific directory.</p>
 </li>
-<li><code>cache_directory</code>: This is the directory for the kernel to store temporary log files and graphs. By default, this is <code>~/.stata_kernel_cache</code>, where <code>~</code> means your home directory.</li>
-<li><code>graph_format</code>: This is the format to export and display graphs. By default this is <code>svg</code>, but if you're on an older version of Stata, you could switch to <code>png</code>. There is also some support for <code>pdf</code> if using Jupyter Notebook.</li>
+<li>
+<p><code>graph_format</code>: the format to export and display graphs. By default this is <code>svg</code>, but if you're on an older version of Stata, you could switch to <code>png</code>. There is also some support for <code>pdf</code> if using Jupyter Notebook.</p>
+</li>
 </ul>
                 
                   
