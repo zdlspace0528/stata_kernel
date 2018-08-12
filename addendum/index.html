@@ -13,7 +13,7 @@
         <meta name="description" content="A Jupyter Kernel for Stata. Works with Windows, macOS, and Linux.">
       
       
-        <link rel="canonical" href="https://kylebarron.github.io/stata_kernel/comparison_with_ipystata/">
+        <link rel="canonical" href="https://kylebarron.github.io/stata_kernel/addendum/">
       
       
         <meta name="author" content="Kyle Barron">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Comparison with ipystata - stata_kernel</title>
+        <title>Addendum - stata_kernel</title>
       
     
     
@@ -104,7 +104,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../#comparison-with-ipystata" tabindex="1" class="md-skip">
+      <a href="../#addendum" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -130,7 +130,7 @@
                 stata_kernel
               </span>
               <span class="md-header-nav__topic">
-                Comparison with ipystata
+                Addendum
               </span>
             
           
@@ -437,6 +437,18 @@
       
       
 
+
+  <li class="md-nav__item">
+    <a href="../comparison_with_ipystata/" title="Comparison with ipystata" class="md-nav__link">
+      Comparison with ipystata
+    </a>
+  </li>
+
+    
+      
+      
+      
+
   
 
 
@@ -447,22 +459,39 @@
       
     
     
-    <a href="./" title="Comparison with ipystata" class="md-nav__link md-nav__link--active">
-      Comparison with ipystata
-    </a>
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Addendum
+      </label>
     
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../addendum/" title="Addendum" class="md-nav__link">
+    <a href="./" title="Addendum" class="md-nav__link md-nav__link--active">
       Addendum
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contributors" title="Contributors" class="md-nav__link">
+    Contributors
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -495,6 +524,22 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contributors" title="Contributors" class="md-nav__link">
+    Contributors
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -505,16 +550,20 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/kylebarron/stata_kernel/blob/master/docs/src/comparison_with_ipystata.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/kylebarron/stata_kernel/blob/master/docs/src/addendum.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="comparison-with-ipystata">Comparison with <a href="https://github.com/TiesdeKok/ipystata">ipystata</a><a class="headerlink" href="#comparison-with-ipystata" title="Permanent link">&para;</a></h1>
-<p>Except for Windows, this package takes a different approach to communication
-with Stata. On macOS and Linux, this controls the Stata console directly, which
-prevents speed degradation with larger data sets. In contrast, <code>ipystata</code> saves
-the data set to disk after each code cell, slowing execution.</p>
-<p>This is also a pure Jupyter kernel, whereas <code>ipystata</code> is a Jupyter "magic" within the Python kernel. This means that you don't need to have any knowledge of Python* and don't need to have packages like Pandas installed.</p>
-<p>* Python is amazing language, and if you want to move on to bigger data, I highly recommend learning Python.</p>
+                <h1 id="addendum">Addendum<a class="headerlink" href="#addendum" title="Permanent link">&para;</a></h1>
+<p>As an ardent open-source advocate and someone who actively dislikes using Stata,
+it somewhat pains me that my work creates value for a proprietary, closed-source
+program. I hope that this program improves research in a utilitarian way, and
+shows to new users the scope of the open-source tools that have existed for
+upwards of a <em>decade</em>.</p>
+<h2 id="contributors">Contributors<a class="headerlink" href="#contributors" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="github.com/kylebarron">Kyle Barron</a>: main developer.</li>
+<li><a href="github.com/mcaceresb">Mauricio Cáceres</a>: wrote magics for timing commands and changing plot size.</li>
+</ul>
                 
                   
                 
@@ -535,7 +584,7 @@ the data set to disk after each code cell, slowing execution.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../troubleshooting/" title="Troubleshooting" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../comparison_with_ipystata/" title="Comparison with ipystata" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -544,19 +593,19 @@ the data set to disk after each code cell, slowing execution.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Troubleshooting
+                Comparison with ipystata
               </span>
             </div>
           </a>
         
         
-          <a href="../addendum/" title="Addendum" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../license/" title="License" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Addendum
+                License
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
