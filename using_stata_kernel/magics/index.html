@@ -439,8 +439,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#plot" title="%plot" class="md-nav__link">
-    %plot
+  <a href="#browse" title="%browse" class="md-nav__link">
+    %browse
   </a>
   
 </li>
@@ -455,13 +455,6 @@
         <li class="md-nav__item">
   <a href="#globals" title="%globals" class="md-nav__link">
     %globals
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#time" title="%time" class="md-nav__link">
-    %time
   </a>
   
 </li>
@@ -551,8 +544,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#plot" title="%plot" class="md-nav__link">
-    %plot
+  <a href="#browse" title="%browse" class="md-nav__link">
+    %browse
   </a>
   
 </li>
@@ -567,13 +560,6 @@
         <li class="md-nav__item">
   <a href="#globals" title="%globals" class="md-nav__link">
     %globals
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#time" title="%time" class="md-nav__link">
-    %time
   </a>
   
 </li>
@@ -599,38 +585,60 @@
                 
                 <h1 id="magics">Magics<a class="headerlink" href="#magics" title="Permanent link">&para;</a></h1>
 <p><strong>Magics</strong> are programs provided by <code>stata_kernel</code> that enhance the experience of working with Stata in Jupyter.</p>
-<h2 id="plot"><code>%plot</code><a class="headerlink" href="#plot" title="Permanent link">&para;</a></h2>
-<p><strong>Force Plot to Show</strong></p>
-<p>In most cases, <code>stata_kernel</code> is able to see that you're creating a graph, and will correctly display it. However if you're running a program and a graph is created within the program, you may have to nudge the kernel to show the graph. You can do that with <code>%plot</code>.</p>
-<div class="codehilite"><pre><span></span><span class="k">program</span> define make_scatter_plot
-<span class="k">    sysuse</span> auto
-<span class="k">    scatter</span> price mpg
-end
+<p>All magics are special commands that start with <code>%</code>. They must be the first word of the cell or selection, otherwise they won't be intercepted and will be sent to Stata.</p>
+<h2 id="browse"><code>%browse</code><a class="headerlink" href="#browse" title="Permanent link">&para;</a></h2>
+<p><strong>Interactively view your dataset</strong></p>
+<p>For now, this displays the first 200 rows of your data. This will be expanded in the future to allow for a <code>varlist</code>, <code>if</code>, and <code>in</code> options.</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><strong>Atom</strong></td>
+<td align="center"><img alt="Atom" src="../../img/browse_atom.png" /></td>
+</tr>
+<tr>
+<td align="center"><strong>Jupyter Notebook</strong></td>
+<td align="center"><img alt="Jupyter Notebook" src="../../img/browse_notebook.png" /></td>
+</tr>
+</tbody>
+</table>
+<!-- ## `%plot`
 
-%plot make_scatter_plot
-</pre></div>
+**Force Plot to Show**
 
-<p>You can provide options after <code>%plot</code> and before code:</p>
-<div class="codehilite"><pre><span></span>usage: %plot [-h] [--scale SCALE] [--width WIDTH] [--height HEIGHT] [--set]
-             [CODE [CODE ...]]
-</pre></div>
+In most cases, `stata_kernel` is able to see that you're creating a graph, and will correctly display it. However if you're running a program and a graph is created within the program, you may have to nudge the kernel to show the graph. You can do that with `%plot`.
 
-<ul>
-<li><code>-h</code> or <code>--help</code>: show help menu for <code>%plot</code></li>
-<li><code>--scale</code>: Scale default height and width. Defaults to 1.</li>
-<li><code>--width</code>: Plot width in pixels. Defaults to 600px.</li>
-<li><code>--height</code>: Plot height in pixels. Defaults to 400px.</li>
-<li><code>--set</code>: Set plot width and height for the rest of the session.</li>
-</ul>
+wzxhzdk:0
+
+
+You can provide options after `%plot` and before code:
+
+wzxhzdk:1
+
+- `-h` or `--help`: show help menu for `%plot`
+- `--scale`: Scale default height and width. Defaults to 1.
+- `--width`: Plot width in pixels. Defaults to 600px.
+- `--height`: Plot height in pixels. Defaults to 400px.
+- `--set`: Set plot width and height for the rest of the session. -->
+
 <h2 id="locals"><code>%locals</code><a class="headerlink" href="#locals" title="Permanent link">&para;</a></h2>
 <p><strong>List Local Macros</strong></p>
 <h2 id="globals"><code>%globals</code><a class="headerlink" href="#globals" title="Permanent link">&para;</a></h2>
 <p><strong>List Global Macros</strong></p>
-<h2 id="time"><code>%time</code><a class="headerlink" href="#time" title="Permanent link">&para;</a></h2>
-<p><strong>Time Execution of a Command</strong></p>
-<p>This timing is currently most exact on macOS and Linux using the console method of speaking to Stata. It may be redeveloped in the future to use Stata's <code>rmsg</code> option.</p>
-<div class="codehilite"><pre><span></span>%time<span class="k"> sleep</span> <span class="m">100</span>
-</pre></div>
+<!-- ## `%time`
+
+**Time Execution of a Command**
+
+This timing is currently most exact on macOS and Linux using the console method of speaking to Stata. It may be redeveloped in the future to use Stata's `rmsg` option.
+
+```stata
+%time sleep 100
+``` -->
                 
                   
                 
@@ -715,7 +723,7 @@ end
       
       <script>app.initialize({version:"1.0",url:{base:"../.."}})</script>
       
-        <script src="../../aux/helpers.js"></script>
+        <script src="../../helpers/helpers.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
