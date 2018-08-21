@@ -21,17 +21,12 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://kylebarron.github.io/stata_kernel/using_jupyter/lab/</loc>
-     <lastmod>2018-08-21</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
      <loc>https://kylebarron.github.io/stata_kernel/using_jupyter/atom/</loc>
      <lastmod>2018-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://kylebarron.github.io/stata_kernel/using_jupyter/console/</loc>
+     <loc>https://kylebarron.github.io/stata_kernel/using_jupyter/lab/</loc>
      <lastmod>2018-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -41,12 +36,7 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://kylebarron.github.io/stata_kernel/using_jupyter/remote/</loc>
-     <lastmod>2018-08-21</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://kylebarron.github.io/stata_kernel/using_stata_kernel/intro/</loc>
+     <loc>https://kylebarron.github.io/stata_kernel/using_jupyter/console/</loc>
      <lastmod>2018-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>

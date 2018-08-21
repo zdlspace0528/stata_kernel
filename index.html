@@ -281,8 +281,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#features" title="Features" class="md-nav__link">
-    Features
+  <a href="#stata_kernel-features" title="stata_kernel Features" class="md-nav__link">
+    stata_kernel Features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screenshots" title="Screenshots" class="md-nav__link">
+    Screenshots
   </a>
   
 </li>
@@ -359,18 +366,6 @@
 
 
   <li class="md-nav__item">
-    <a href="using_jupyter/lab/" title="JupyterLab" class="md-nav__link">
-      JupyterLab
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="using_jupyter/atom/" title="Atom" class="md-nav__link">
       Atom
     </a>
@@ -383,8 +378,8 @@
 
 
   <li class="md-nav__item">
-    <a href="using_jupyter/console/" title="Jupyter Console" class="md-nav__link">
-      Jupyter Console
+    <a href="using_jupyter/lab/" title="JupyterLab" class="md-nav__link">
+      JupyterLab
     </a>
   </li>
 
@@ -407,8 +402,8 @@
 
 
   <li class="md-nav__item">
-    <a href="using_jupyter/remote/" title="Using Jupyter on Remote Servers" class="md-nav__link">
-      Using Jupyter on Remote Servers
+    <a href="using_jupyter/console/" title="Jupyter Console" class="md-nav__link">
+      Jupyter Console
     </a>
   </li>
 
@@ -423,46 +418,10 @@
       
 
 
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
-    
-    <label class="md-nav__link" for="nav-4">
+  <li class="md-nav__item">
+    <a href="using_stata_kernel/magics/" title="Using the Stata Kernel" class="md-nav__link">
       Using the Stata Kernel
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        Using the Stata Kernel
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="using_stata_kernel/intro/" title="Introduction" class="md-nav__link">
-      Introduction
     </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="using_stata_kernel/magics/" title="Magics" class="md-nav__link">
-      Magics
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
   </li>
 
     
@@ -542,8 +501,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#features" title="Features" class="md-nav__link">
-    Features
+  <a href="#stata_kernel-features" title="stata_kernel Features" class="md-nav__link">
+    stata_kernel Features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screenshots" title="Screenshots" class="md-nav__link">
+    Screenshots
   </a>
   
 </li>
@@ -588,36 +554,26 @@ is the bridge that interactively connects Stata to all the elements in the ecosy
 <li><strong>Hydrogen</strong> is a package for the Atom text editor that connects with Jupyter kernels to display results interactively in your text editor.</li>
 <li>Enhanced remote work. You can set up Jupyter to run computations remotely but to show results locally, vastly enhancing productivity compared to working with the Stata console through a command line.</li>
 </ul>
-<table>
-<thead>
-<tr>
-<th align="center">Atom</th>
-<th align="center">Jupyter Notebook</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><img alt="Atom" src="img/atom.png" /></td>
-<td align="center"><img alt="Jupyter Notebook" src="img/jupyter_notebook.png" /></td>
-</tr>
-</tbody>
-</table>
-<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
-<p><code>stata_kernel</code> is undergoing active development, and not all of the features have been completed. You may find bugs in the program still. If you do, please <a href="https://github.com/kylebarron/stata_kernel/issues/new?template=bug_report.md">submit a bug report</a>.</p>
+<h2 id="stata_kernel-features"><code>stata_kernel</code> Features<a class="headerlink" href="#stata_kernel-features" title="Permanent link">&para;</a></h2>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Supports Windows, macOS, and Linux.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Works with Jupyter Notebook and Atom's Hydrogen package</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Use any type of comments in your code, not just <code>*</code>.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Display graphs</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Work with a remote session of Stata</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Receive results as they appear, not after the entire command finishes.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Special shorthand "magics" to aid with browsing data and timing code.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Autocompletions as you type based on the variables, macros, and return objects currently in memory.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Display graphs.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Receive results as they appear, not after the entire command finishes.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="using_stata_kernel/magics/#help">Pull up interactive help files within the kernel.</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="using_stata_kernel/magics/#browse">Browse data interactively</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="using_stata_kernel/magics/#delimit"><code>#delimit ;</code> interactive support.</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Work with a remote session of Stata</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Mata interactive support</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <code>#delimit ;</code> interactive support.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Cross-session history file</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Pull up help files within the kernel.</li>
 </ul>
+<p>If you find bugs, please <a href="https://github.com/kylebarron/stata_kernel/issues/new?template=bug_report.md">submit a bug report here</a>.</p>
+<h2 id="screenshots">Screenshots<a class="headerlink" href="#screenshots" title="Permanent link">&para;</a></h2>
+<p><strong>Jupyter Notebook</strong></p>
+<p><img alt="Jupyter Notebook" src="img/jupyter_notebook.png" /></p>
+<p><strong>Atom</strong></p>
+<p><img alt="Atom" src="img/atom.png" /></p>
                 
                   
                 

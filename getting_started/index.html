@@ -304,6 +304,26 @@
     Configuration
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-settings" title="General settings" class="md-nav__link">
+    General settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graph-settings" title="Graph settings" class="md-nav__link">
+    Graph settings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -366,18 +386,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../using_jupyter/lab/" title="JupyterLab" class="md-nav__link">
-      JupyterLab
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../using_jupyter/atom/" title="Atom" class="md-nav__link">
       Atom
     </a>
@@ -390,8 +398,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../using_jupyter/console/" title="Jupyter Console" class="md-nav__link">
-      Jupyter Console
+    <a href="../using_jupyter/lab/" title="JupyterLab" class="md-nav__link">
+      JupyterLab
     </a>
   </li>
 
@@ -414,8 +422,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../using_jupyter/remote/" title="Using Jupyter on Remote Servers" class="md-nav__link">
-      Using Jupyter on Remote Servers
+    <a href="../using_jupyter/console/" title="Jupyter Console" class="md-nav__link">
+      Jupyter Console
     </a>
   </li>
 
@@ -430,46 +438,10 @@
       
 
 
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
-    
-    <label class="md-nav__link" for="nav-4">
+  <li class="md-nav__item">
+    <a href="../using_stata_kernel/magics/" title="Using the Stata Kernel" class="md-nav__link">
       Using the Stata Kernel
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        Using the Stata Kernel
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../using_stata_kernel/intro/" title="Introduction" class="md-nav__link">
-      Introduction
     </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../using_stata_kernel/magics/" title="Magics" class="md-nav__link">
-      Magics
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
   </li>
 
     
@@ -560,6 +532,26 @@
     Configuration
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-settings" title="General settings" class="md-nav__link">
+    General settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graph-settings" title="Graph settings" class="md-nav__link">
+    Graph settings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -586,22 +578,34 @@
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p><strong>Python</strong>. In order to install the kernel, Python &gt;= 3.5 needs to be installed.</p>
+<p><strong>Python</strong>. In order to install the kernel, Python &gt;= 3.5 needs to be installed on the computer on which Stata is running.</p>
 <p>I suggest installing the <a href="https://www.anaconda.com/download/">Anaconda
 distribution</a>, which doesn't require
-administrator privileges and is simple to install. If you want to use less
-disk space, install <a href="https://conda.io/miniconda.html">Miniconda</a>, which
-includes few packages other than Python.</p>
+administrator privileges and is simple to install.</p>
+<p>The Anaconda installer includes many third party libraries for Python that
+<code>stata_kernel</code> doesn't use. If you don't plan to use Python and want to use
+less disk space, install <a href="https://conda.io/miniconda.html">Miniconda</a>, which
+includes few packages other than Python. Then in <a href="#package-install">Package
+Install</a> any other necessary dependencies will be
+downloaded automatically.</p>
 </li>
 </ul>
-<details class="note" open="open"><summary>Windows-specific steps</summary><p>If you're using macOS or Linux, disregard this section.</p><ul><li>Install <a href="https://github.com/mhammond/pywin32/releases/latest">pywin32</a>, which lets Python talk to Stata. Choose the version of Python you have installed (you can find the version of Python installed by typing <code>python --version</code> into your command prompt.):<ul><li><a href="https://github.com/mhammond/pywin32/releases/download/b223/pywin32-223.win-amd64-py3.5.exe">Python 3.5</a></li><li><a href="https://github.com/mhammond/pywin32/releases/download/b223/pywin32-223.win-amd64-py3.6.exe">Python 3.6</a></li><li><a href="https://github.com/mhammond/pywin32/releases/download/b223/pywin32-223.win-amd64-py3.7.exe">Python 3.7</a></li></ul></li><li><p><a href="https://www.stata.com/automation/#install">Link the Stata Automation library</a>. The Stata executable is most likely in the folder <code>C:\Program Files (x86)\Stata15</code>.</p><ol><li>In the installation directory, right-click on the Stata executable, for example, <code>StataSE.exe</code>. Choose <code>Create Shortcut</code>.</li><li>Right-click on the newly created <code>Shortcut to StataSE.exe</code>, choose <code>Property</code>, and change the target from <code>"C:\Program Files\Stata15\StataSE.exe"</code> to <code>"C:\Program Files\Stata15\StataSE.exe" /Register</code>. Click <code>OK</code>.</li><li>Right-click on the updated <code>Shortcut to StataSE.exe</code>; choose <code>Run as administrator</code>.</li></ol></li></ul></details><h2 id="package-install">Package Install<a class="headerlink" href="#package-install" title="Permanent link">&para;</a></h2>
-<p>To install the kernel, run:</p>
-<div class="codehilite"><pre><span></span>$ pip install stata_kernel --upgrade
+<details class="note" open="open"><summary>Windows-specific steps</summary><p>If you're using macOS or Linux, disregard this section.</p><ul><li>Install <a href="https://github.com/mhammond/pywin32/releases/latest">pywin32</a>, which lets Python talk to Stata. Choose the version of Python you have installed (you can find the version of Python installed by typing <code>python --version</code> into your command prompt.):<ul><li><a href="https://github.com/mhammond/pywin32/releases/download/b223/pywin32-223.win-amd64-py3.5.exe">Python 3.5</a></li><li><a href="https://github.com/mhammond/pywin32/releases/download/b223/pywin32-223.win-amd64-py3.6.exe">Python 3.6</a></li><li><a href="https://github.com/mhammond/pywin32/releases/download/b223/pywin32-223.win-amd64-py3.7.exe">Python 3.7</a></li></ul></li><li><p><a href="https://www.stata.com/automation/#install">Link the Stata Automation library</a>.</p><ol><li>In the installation directory (most likely <code>C:\Program Files (x86)\Stata15</code> or similar), right-click on the Stata executable, for example, <code>StataSE.exe</code>. Choose <code>Create Shortcut</code>.</li><li>Right-click on the newly created <code>Shortcut to StataSE.exe</code>, choose <code>Property</code>, and change the target from <code>"C:\Program Files\Stata15\StataSE.exe"</code> to <code>"C:\Program Files\Stata15\StataSE.exe" /Register</code>. Click <code>OK</code>.</li><li>Right-click on the updated <code>Shortcut to StataSE.exe</code>; choose <code>Run as administrator</code>.</li></ol></li></ul></details><h2 id="package-install">Package Install<a class="headerlink" href="#package-install" title="Permanent link">&para;</a></h2>
+<p>To install the kernel, from a terminal or command prompt run:</p>
+<div class="codehilite"><pre><span></span>$ pip install stata_kernel
 $ python -m stata_kernel.install
 </pre></div>
 
-<p>The latter command will try to find the path to your Stata executable, and will
-warn you if it can't. If it can't find your Stata executable, you'll have to set it yourself. Refer to the <a href="#configuration">configuration</a>.</p>
+<p>The second command will try to find your Stata executable, and will warn you if
+it can't. In that case, you'll have to set it yourself. Refer to the
+<a href="#configuration">configuration</a> below.</p>
+<p>To upgrade from a previous version of <code>stata_kernel</code>, from a terminal or command prompt run</p>
+<div class="codehilite"><pre><span></span>$ pip install stata_kernel --upgrade
+</pre></div>
+
+<p>When upgrading, don't run <code>python -m stata_kernel.install</code> again. It's
+unnecessary and will overwrite any settings you've defined in the
+<a href="#configuration">configuration</a>.</p>
 <h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
 <p>The configuration file is named <code>.stata_kernel.conf</code> and is located in your home
 directory. You can change any of the package's settings by opening the file and
@@ -609,8 +613,14 @@ changing the <code>value</code> of any line of the form</p>
 <div class="codehilite"><pre><span></span>configuration_setting = value
 </pre></div>
 
+<h3 id="general-settings">General settings<a class="headerlink" href="#general-settings" title="Permanent link">&para;</a></h3>
 <ul>
-<li><code>stata_path</code>: the path to your Stata executable. The <a href="./#package-install">install step</a> should have found your executable if you installed it in the standard location. If you receive a warning during the install step, you'll need to manually find the location of Stata and add it to this file.</li>
+<li>
+<p><code>stata_path</code>: the path on your file system to your Stata executable. Usually this can be found automatically in the <a href="./#package-install">install step</a>, but sometimes may need to be set manually.</p>
+</li>
+<li>
+<p><code>cache_directory</code>: the directory for the kernel to store temporary log files and graphs. By default, this is <code>~/.stata_kernel_cache</code>, where <code>~</code> means your home directory. You may wish to change this location if, for example, you're working under a Data Use Agreement where all related files must be stored in a specific directory.</p>
+</li>
 <li>
 <p><code>execution_mode</code>: For macOS users, this allows for setting the method in which <code>stata_kernel</code> communicates with Stata. <code>automation</code> uses <a href="https://www.stata.com/automation/">Stata Automation</a> while <code>console</code> controls the console version of Stata.</p>
 <p><code>console</code> is the default because it allows for multiple independent sessions
@@ -619,11 +629,27 @@ browse the data interactively with <code>browse</code>.</p>
 <p>On Windows, all communication with Stata happens through Stata Automation,
 and on Linux/Unix all communication happens through the console.</p>
 </li>
+</ul>
+<h3 id="graph-settings">Graph settings<a class="headerlink" href="#graph-settings" title="Permanent link">&para;</a></h3>
+<p>These settings can be changed during a session with the <code>%set</code> magic, like so:</p>
+<div class="codehilite"><pre><span></span>%set plot --format svg
+%set plot --scale 1
+%set plot --width 500
+%set plot --width 400 --height 300
+</pre></div>
+
+<ul>
 <li>
-<p><code>cache_directory</code>: the directory for the kernel to store temporary log files and graphs. By default, this is <code>~/.stata_kernel_cache</code>, where <code>~</code> means your home directory. You may wish to change this location if, for example, you're working under a Data Use Agreement where all related files must be stored in a specific directory.</p>
+<p><code>graph_format</code>: <code>svg</code> or <code>png</code>, the format to export and display graphs. By default this is <code>svg</code> for most operating systems and versions of Stata, but is <code>png</code> by default for Windows on Stata 14 and below.</p>
 </li>
 <li>
-<p><code>graph_format</code>: the format to export and display graphs. By default this is <code>svg</code>, but if you're on an older version of Stata, you could switch to <code>png</code>. There is also some support for <code>pdf</code> if using Jupyter Notebook.</p>
+<p><code>graph_scale</code>: a decimal number. This scales equally the width and height of plots displayed. By default, plots are 600 pixels wide.</p>
+</li>
+<li>
+<p><code>graph_width</code>: an integer. This is the width in pixels of graphs displayed. If no <code>graph_height</code> is set, Stata will determine the optimal height for the specific image.</p>
+</li>
+<li>
+<p><code>graph_height</code>: an integer. This is the height in pixels of graphs displayed.</p>
 </li>
 </ul>
                 
