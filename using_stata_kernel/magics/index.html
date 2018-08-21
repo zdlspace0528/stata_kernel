@@ -416,6 +416,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#head-tail" title="%head, %tail" class="md-nav__link">
+    %head, %tail
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#help" title="%help" class="md-nav__link">
     %help
   </a>
@@ -543,6 +550,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#head-tail" title="%head, %tail" class="md-nav__link">
+    %head, %tail
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#help" title="%help" class="md-nav__link">
     %help
   </a>
@@ -596,7 +610,7 @@
 <p>All magics are special commands that start with <code>%</code>. They must be the first word
 of the cell or selection, otherwise they won't be intercepted and will be sent
 to Stata.</p>
-<p>For some of the magics listed, you can add <code>--help</code> to see a help menu in the kernel. For example,
+<p>For most of the magics listed, you can add <code>--help</code> to see a help menu in the kernel. For example,
 <div class="codehilite"><pre><span></span>In [1]: %locals --help
 usage: %locals [-h] [-v] [REGEX [REGEX ...]]
 
@@ -648,8 +662,21 @@ In [4]: #delimit cr
 delimiter now cr
 </pre></div>
 
+<h3 id="head-tail"><code>%head</code>, <code>%tail</code><a class="headerlink" href="#head-tail" title="Permanent link">&para;</a></h3>
+<p><strong>View the first or last observations of the data</strong></p>
+<p>This can optionally be provided with a <code>varlist</code>, <code>N</code>, or <code>if</code>:
+<div class="codehilite"><pre><span></span>%head [-h] [N] [varlist] [if]
+%tail [-h] [N] [varlist] [if]
+</pre></div></p>
+<p>For example,
+<div class="codehilite"><pre><span></span>sysuse auto
+%head 5 make price mpg if mpg &lt; 20
+</pre></div></p>
 <h3 id="help"><code>%help</code><a class="headerlink" href="#help" title="Permanent link">&para;</a></h3>
 <p><strong>Display a help file in rich text</strong></p>
+<div class="codehilite"><pre><span></span>%help [-h] command_or_topic_name
+</pre></div>
+
 <p>Add the term you want to search for after <code>%help</code>:
 <div class="codehilite"><pre><span></span>In [1]: %help histogram
 </pre></div></p>
@@ -675,6 +702,10 @@ on them to see another help menu.</p>
 </table>
 <h3 id="locals-globals"><code>%locals</code>, <code>%globals</code><a class="headerlink" href="#locals-globals" title="Permanent link">&para;</a></h3>
 <p><strong>List local or global macros</strong></p>
+<div class="codehilite"><pre><span></span>%locals [-h] [-v] [REGEX [REGEX ...]]
+%globals [-h] [-v] [REGEX [REGEX ...]]
+</pre></div>
+
 <p>These take two optional arguments:</p>
 <ol>
 <li>a regular expression for filtering the locals or globals displayed</li>
@@ -702,10 +733,13 @@ S_MACH:    PC (64-bit x86-64)
 
 <h3 id="set"><code>%set</code><a class="headerlink" href="#set" title="Permanent link">&para;</a></h3>
 <p><strong>Set configuration settings</strong></p>
-<div class="codehilite"><pre><span></span>%set plot --format svg
-%set plot --scale 1
-%set plot --width 500
-%set plot --width 400 --height 300
+<p>Usage:
+<div class="codehilite"><pre><span></span>%set [-h] [--permanently] [--reset] {graph,_all} ...
+</pre></div></p>
+<div class="codehilite"><pre><span></span>%set graph --format svg
+%set graph --scale 1
+%set graph --width 500
+%set graph --width 400 --height 300
 </pre></div>
 
 <!-- ### `%time`
