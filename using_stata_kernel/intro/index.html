@@ -13,7 +13,7 @@
         <meta name="description" content="A Jupyter Kernel for Stata. Works with Windows, macOS, and Linux.">
       
       
-        <link rel="canonical" href="https://kylebarron.github.io/stata_kernel/using_stata_kernel/magics/">
+        <link rel="canonical" href="https://kylebarron.github.io/stata_kernel/using_stata_kernel/intro/">
       
       
         <meta name="author" content="Kyle Barron">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Magics - stata_kernel</title>
+        <title>Introduction - stata_kernel</title>
       
     
     
@@ -104,7 +104,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../../#magics" tabindex="1" class="md-skip">
+      <a href="../../#using-the-stata-kernel" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -130,7 +130,7 @@
                 stata_kernel
               </span>
               <span class="md-header-nav__topic">
-                Magics
+                Introduction
               </span>
             
           
@@ -386,18 +386,6 @@
           
           
 
-
-  <li class="md-nav__item">
-    <a href="../intro/" title="Introduction" class="md-nav__link">
-      Introduction
-    </a>
-  </li>
-
-        
-          
-          
-          
-
   
 
 
@@ -409,11 +397,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Magics
+        Introduction
       </label>
     
-    <a href="./" title="Magics" class="md-nav__link md-nav__link--active">
-      Magics
+    <a href="./" title="Introduction" class="md-nav__link md-nav__link--active">
+      Introduction
     </a>
     
       
@@ -427,43 +415,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#browse" title="%browse" class="md-nav__link">
-    %browse
+  <a href="#displaying-graphs" title="Displaying graphs" class="md-nav__link">
+    Displaying graphs
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#delimit" title="%delimit" class="md-nav__link">
-    %delimit
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#head-tail" title="%head, %tail" class="md-nav__link">
-    %head, %tail
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#help" title="%help" class="md-nav__link">
-    %help
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#locals-globals" title="%locals, %globals" class="md-nav__link">
-    %locals, %globals
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#set" title="%set" class="md-nav__link">
-    %set
+  <a href="#delimit-mode" title="#delimit ; mode" class="md-nav__link">
+    #delimit ; mode
   </a>
   
 </li>
@@ -476,6 +436,18 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../magics/" title="Magics" class="md-nav__link">
+      Magics
+    </a>
   </li>
 
         
@@ -553,43 +525,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#browse" title="%browse" class="md-nav__link">
-    %browse
+  <a href="#displaying-graphs" title="Displaying graphs" class="md-nav__link">
+    Displaying graphs
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#delimit" title="%delimit" class="md-nav__link">
-    %delimit
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#head-tail" title="%head, %tail" class="md-nav__link">
-    %head, %tail
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#help" title="%help" class="md-nav__link">
-    %help
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#locals-globals" title="%locals, %globals" class="md-nav__link">
-    %locals, %globals
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#set" title="%set" class="md-nav__link">
-    %set
+  <a href="#delimit-mode" title="#delimit ; mode" class="md-nav__link">
+    #delimit ; mode
   </a>
   
 </li>
@@ -610,156 +554,25 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/kylebarron/stata_kernel/blob/master/docs/src/using_stata_kernel/magics.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/kylebarron/stata_kernel/blob/master/docs/src/using_stata_kernel/intro.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="magics">Magics<a class="headerlink" href="#magics" title="Permanent link">&para;</a></h1>
-<p><strong>Magics</strong> are programs provided by <code>stata_kernel</code> that enhance the experience
-*of working with Stata in Jupyter.</p>
-<p>All magics are special commands that start with <code>%</code>. They must be the first word
-of the cell or selection, otherwise they won't be intercepted and will be sent
-to Stata.</p>
-<p>For most of the magics listed, you can add <code>--help</code> to see a help menu in the kernel. For example,
-<div class="codehilite"><pre><span></span>In [1]: %locals --help
-usage: %locals [-h] [-v] [REGEX [REGEX ...]]
-
-positional arguments:
-  REGEX          regex to match
-
-optional arguments:
-  -h, --help     show this help message and exit
-  -v, --verbose  Verbose output (print full contents of matched locals).
-</pre></div></p>
-<p>The magics that respond with richly formatted text, namely <code>%browse</code> and
-<code>%help</code>, will not work with Jupyter Console or Jupyter QtConsole, since they
-don't support displaying HTML.</p>
-<h2 id="browse"><code>%browse</code><a class="headerlink" href="#browse" title="Permanent link">&para;</a></h2>
-<p><strong>Interactively view your dataset</strong></p>
-<p>For now, this displays the first 200 rows of your data. This will be expanded in the future to allow for a <code>varlist</code>, <code>if</code>, and <code>in</code> options.</p>
-<table>
-<thead>
-<tr>
-<th align="center"></th>
-<th align="center"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><strong>Atom</strong></td>
-<td align="center"><img alt="Atom" src="../../img/browse_atom.png" /></td>
-</tr>
-<tr>
-<td align="center"><strong>Jupyter Notebook</strong></td>
-<td align="center"><img alt="Jupyter Notebook" src="../../img/browse_notebook.png" /></td>
-</tr>
-</tbody>
-</table>
-<h2 id="delimit"><code>%delimit</code><a class="headerlink" href="#delimit" title="Permanent link">&para;</a></h2>
-<p><strong>Print the current delimiter</strong></p>
-<p>This takes no arguments; it prints the delimiter currently set: either <code>cr</code> or
-<code>;</code>. If you want to change the delimiter, use <code>#delimit ;</code> or <code>#delimit cr</code>. The
-delimiter will remain set until changed.</p>
-<div class="codehilite"><pre><span></span>In [1]: %delimit
-The delimiter is currently: cr
-
-In [2]: #delimit ;
-delimiter now ;
-In [3]: %delimit
-The delimiter is currently: ;
-
-In [4]: #delimit cr
-delimiter now cr
-</pre></div>
-
-<h2 id="head-tail"><code>%head</code>, <code>%tail</code><a class="headerlink" href="#head-tail" title="Permanent link">&para;</a></h2>
-<p><strong>View the first or last observations of the data</strong></p>
-<p>This can optionally be provided with a <code>varlist</code>, <code>N</code>, or <code>if</code>:
-<div class="codehilite"><pre><span></span>%head [-h] [N] [varlist] [if]
-%tail [-h] [N] [varlist] [if]
-</pre></div></p>
-<p>For example,
-<div class="codehilite"><pre><span></span>sysuse auto
-%head 5 make price mpg if mpg &lt; 20
-</pre></div></p>
-<h2 id="help"><code>%help</code><a class="headerlink" href="#help" title="Permanent link">&para;</a></h2>
-<p><strong>Display a help file in rich text</strong></p>
-<div class="codehilite"><pre><span></span>%help [-h] command_or_topic_name
-</pre></div>
-
-<p>Add the term you want to search for after <code>%help</code>:
-<div class="codehilite"><pre><span></span>In [1]: %help histogram
-</pre></div></p>
-<p>The terms in italics (Atom) or underlined (Jupyter Notebook) are <em>links</em>. Click
-on them to see another help menu.</p>
-<table>
-<thead>
-<tr>
-<th align="center"></th>
-<th align="center"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><strong>Atom</strong></td>
-<td align="center"><img alt="Atom" src="../../img/atom_help_magic.png" /></td>
-</tr>
-<tr>
-<td align="center"><strong>Jupyter Notebook</strong></td>
-<td align="center"><img alt="Jupyter Notebook" src="../../img/notebook_help_magic.png" /></td>
-</tr>
-</tbody>
-</table>
-<h2 id="locals-globals"><code>%locals</code>, <code>%globals</code><a class="headerlink" href="#locals-globals" title="Permanent link">&para;</a></h2>
-<p><strong>List local or global macros</strong></p>
-<div class="codehilite"><pre><span></span>%locals [-h] [-v] [REGEX [REGEX ...]]
-%globals [-h] [-v] [REGEX [REGEX ...]]
-</pre></div>
-
-<p>These take two optional arguments:</p>
-<ol>
-<li>a regular expression for filtering the locals or globals displayed</li>
-<li>a <code>--verbose</code> flag</li>
-</ol>
-<div class="codehilite"><pre><span></span>In [1]: %globals S_
-(note: showing first line of global values; run with --verbose)
-
-S_ADO:     BASE;SITE;.;PERSONAL;PLUS;OLDPLACE;`&quot;/home/kyle/github/stata/sta
-S_level:   95
-S_CONSOLE: console
-S_FLAVOR:  Intercooled
-S_OS:      Unix
-S_MACH:    PC (64-bit x86-64)
-
-In [2]: %globals S_ --verbose
-S_ADO:     BASE;SITE;.;PERSONAL;PLUS;OLDPLACE;`&quot;/home/kyle/github/stata/sta
-           &gt; ta_kernel/stata_kernel/ado&quot;&#39;
-S_level:   95
-S_CONSOLE: console
-S_FLAVOR:  Intercooled
-S_OS:      Unix
-S_MACH:    PC (64-bit x86-64)
-</pre></div>
-
-<h2 id="set"><code>%set</code><a class="headerlink" href="#set" title="Permanent link">&para;</a></h2>
-<p><strong>Set configuration settings</strong></p>
-<p>Usage:
-<div class="codehilite"><pre><span></span>%set [-h] [--permanently] [--reset] {graph,_all} ...
-</pre></div></p>
-<div class="codehilite"><pre><span></span>%set graph --format svg
-%set graph --scale 1
-%set graph --width 500
-%set graph --width 400 --height 300
-</pre></div>
-
-<!-- ## `%time`
-
-**Time Execution of a Command**
-
-This timing is currently most exact on macOS and Linux using the console method of speaking to Stata. It may be redeveloped in the future to use Stata's `rmsg` option.
-
-```stata
-%time sleep 100
-``` -->
+                <h1 id="using-the-stata-kernel">Using the Stata Kernel<a class="headerlink" href="#using-the-stata-kernel" title="Permanent link">&para;</a></h1>
+<p>The Stata kernel is the bridge between Stata and the Jupyter ecosystem. It will work with any of the tools outlined in <a href="../../using_jupyter/intro/">Using Jupyter</a>.</p>
+<p>After <a href="../../getting_started/">installing</a> and optionally <a href="../../getting_started/#configuration">configuring</a> <code>stata_kernel</code>, it should be ready for use.</p>
+<h2 id="displaying-graphs">Displaying graphs<a class="headerlink" href="#displaying-graphs" title="Permanent link">&para;</a></h2>
+<p><code>stata_kernel</code> displays graphs by quietly inserting a <code>graph export</code> command after any command that creates a graph, and then loading the saved file. The advantage of this approach is that it will display <em>all</em> graphs created, even inside a loop or program.</p>
+<p>To minimize false positives, the graph keyword must appear at the beginning of a line. To hide the display of a graph, just prefix <code>graph</code> with <a href="https://www.stata.com/help.cgi?quietly"><code>quietly</code></a>.</p>
+<h2 id="delimit-mode"><code>#delimit ;</code> mode<a class="headerlink" href="#delimit-mode" title="Permanent link">&para;</a></h2>
+<p>Stata lets you use <a href="https://www.stata.com/help.cgi?delimit"><code>;</code> as a command
+delimiter</a> in a do file after a line
+<code>#delimit ;</code>. This can be helpful when writing very long commands, like
+complicated graphs, as it allows for more free-flowing line wrapping. But Stata
+doesn't allow for running <code>;</code>-delimited code interactively, which makes
+debugging code difficult.</p>
+<p><code>stata_kernel</code> lets you code interactively with semicolons as the delimiter for commands within the <code>#delimit ;</code> mode. When activated, it first removes the extra line breaks in the input code and then removes the semicolon, resulting in the code's carriage return-delimited equivalent, which can then be sent to Stata.</p>
+<p>To turn this mode on, just run <code>#delimit ;</code>. To turn it off, run <code>#delimit cr</code>. To check the current delimiter, run <code>%delimit</code>. Code can switch back and forth between delimiters several times with no issue.</p>
+<p>Note that when the setting is enabled, sending code to Stata without a <code>;</code> at the end will be returned as invalid.</p>
                 
                   
                 
@@ -780,7 +593,7 @@ This timing is currently most exact on macOS and Linux using the console method 
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../intro/" title="Introduction" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../using_jupyter/console/" title="Jupyter Console" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -789,19 +602,19 @@ This timing is currently most exact on macOS and Linux using the console method 
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Introduction
+                Jupyter Console
               </span>
             </div>
           </a>
         
         
-          <a href="../../troubleshooting/" title="Troubleshooting" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../magics/" title="Magics" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Troubleshooting
+                Magics
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

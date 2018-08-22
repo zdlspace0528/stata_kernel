@@ -324,9 +324,45 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Atom
+      </label>
+    
     <a href="./" title="Atom" class="md-nav__link md-nav__link--active">
       Atom
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#running-code" title="Running code" class="md-nav__link">
+    Running code
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indentation-and-for-loops" title="Indentation and for loops" class="md-nav__link">
+    Indentation and for loops
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -377,10 +413,46 @@
       
 
 
-  <li class="md-nav__item">
-    <a href="../../using_stata_kernel/magics/" title="Using the Stata Kernel" class="md-nav__link">
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
       Using the Stata Kernel
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Using the Stata Kernel
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../using_stata_kernel/intro/" title="Introduction" class="md-nav__link">
+      Introduction
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../using_stata_kernel/magics/" title="Magics" class="md-nav__link">
+      Magics
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -449,6 +521,29 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#running-code" title="Running code" class="md-nav__link">
+    Running code
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indentation-and-for-loops" title="Indentation and for loops" class="md-nav__link">
+    Indentation and for loops
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -469,7 +564,27 @@
 connects to Jupyter kernels and allows you to view results in-line
 next to your code. You can use it with Python, R, and Julia, as well as Stata. The latter provides syntax highlighting for Stata code.</p>
 <p>Once those are installed, open a do-file and run <kbd>Ctrl</kbd>-<kbd>Enter</kbd> (<kbd>Cmd</kbd>-<kbd>Enter</kbd> on macOS) to start the Stata kernel.</p>
-<p><img alt="" src="../../img/stata_kernel_example.gif" /></p>
+<p>Below is a quick rundown of Hydrogen's capabilities. For more information, see <a href="https://nteract.gitbooks.io/hydrogen/docs/Usage/GettingStarted.html">Hydrogen's documentation</a>.</p>
+<h2 id="running-code">Running code<a class="headerlink" href="#running-code" title="Permanent link">&para;</a></h2>
+<p>There are three main ways to run code using Hydrogen:</p>
+<ul>
+<li>Selection. Manually select/highlight the lines you want to send to Stata and then run <code>Hydrogen: Run</code>, which is usually bound to <kbd>Ctrl</kbd>-<kbd>Enter</kbd>.</li>
+<li>Cursor block. When <code>Hydrogen: Run</code> is called and no code is selected, Hydrogen runs the current line. If code following the present line is more indented than the current line, Hydrogen will run the entire indented block.</li>
+<li>Cell. A cell is a block of lines to be executed at once. They are defined using <code>%%</code> inside comments. See <a href="https://nteract.gitbooks.io/hydrogen/docs/Usage/GettingStarted.html#hydrogen-run-cell">here</a> for more information.</li>
+</ul>
+<h2 id="indentation-and-for-loops">Indentation and for loops<a class="headerlink" href="#indentation-and-for-loops" title="Permanent link">&para;</a></h2>
+<p>Stata <code>foreach</code> loops and programs must be sent as a whole to the kernel. The
+easiest way to make sure that this happens is to indent all code pertaining to
+the block. Starting in version 1.6.4 of <code>language-stata</code>, this will
+automatically include the last line of a for loop or program even if that last
+line has the same indentation as the initial line.</p>
+<p>If the cursor is anywhere on the first line in the segment below, and you run
+<kbd>Ctrl</kbd>-<kbd>Enter</kbd> or <kbd>Shift</kbd>-<kbd>Enter</kbd> (which
+moves your cursor to the next line), it will include the final <code>}</code>.</p>
+<div class="codehilite"><pre><span></span><span class="k">foreach</span> i<span class="k"> in</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> {
+<span class="k">    display</span> <span class="s">&quot;</span><span class="nv">`i&#39;</span><span class="s">&quot;</span>
+}
+</pre></div>
                 
                   
                 

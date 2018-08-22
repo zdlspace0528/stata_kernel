@@ -41,6 +41,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://kylebarron.github.io/stata_kernel/using_stata_kernel/intro/</loc>
+     <lastmod>2018-08-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://kylebarron.github.io/stata_kernel/using_stata_kernel/magics/</loc>
      <lastmod>2018-08-22</lastmod>
      <changefreq>daily</changefreq>
