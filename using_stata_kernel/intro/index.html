@@ -563,6 +563,7 @@
 <h2 id="displaying-graphs">Displaying graphs<a class="headerlink" href="#displaying-graphs" title="Permanent link">&para;</a></h2>
 <p><code>stata_kernel</code> displays graphs by quietly inserting a <code>graph export</code> command after any command that creates a graph, and then loading the saved file. The advantage of this approach is that it will display <em>all</em> graphs created, even inside a loop or program.</p>
 <p>To minimize false positives, the graph keyword must appear at the beginning of a line. To hide the display of a graph, just prefix <code>graph</code> with <a href="https://www.stata.com/help.cgi?quietly"><code>quietly</code></a>.</p>
+<p>To display graphs from user created commands (e.g., <code>coefplot</code>), use <code>graph display</code> after the command that generated the graph.</p>
 <h2 id="delimit-mode"><code>#delimit ;</code> mode<a class="headerlink" href="#delimit-mode" title="Permanent link">&para;</a></h2>
 <p>Stata lets you use <a href="https://www.stata.com/help.cgi?delimit"><code>;</code> as a command
 delimiter</a> in a do file after a line
