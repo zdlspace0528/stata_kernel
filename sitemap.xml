@@ -31,6 +31,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://kylebarron.github.io/stata_kernel/using_jupyter/nteract/</loc>
+     <lastmod>2018-09-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://kylebarron.github.io/stata_kernel/using_jupyter/qtconsole/</loc>
      <lastmod>2018-09-06</lastmod>
      <changefreq>daily</changefreq>
