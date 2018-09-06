@@ -635,6 +635,8 @@ python -m stata_kernel.install
 <p>The second command will try to find your Stata executable, and will warn you if
 it can't. In that case, you'll have to set it yourself. Refer to the
 <a href="#configuration">configuration</a> below.</p>
+<p><code>python -m stata_kernel.install</code> only needs to be run <em>once ever</em>. Running it
+more than once will reset any settings to the original defaults.</p>
 <p>If Python 2 is the default version of Python on your system, you may need to use
 <div class="codehilite"><pre><span></span>pip3 install stata_kernel
 python3 -m stata_kernel.install
@@ -643,9 +645,8 @@ python3 -m stata_kernel.install
 <div class="codehilite"><pre><span></span>pip install stata_kernel --upgrade
 </pre></div>
 
-<p>When upgrading, don't run <code>python -m stata_kernel.install</code> again. It's
-unnecessary and will overwrite any settings you've defined in the
-<a href="#configuration">configuration</a>.</p>
+<p>When upgrading, don't run <code>python -m stata_kernel.install</code> again. It will
+overwrite any settings you've defined in the <a href="#configuration">configuration</a>.</p>
 <h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
 <p>The configuration file is named <code>.stata_kernel.conf</code> and is located in your home
 directory. You can change any of the package's settings by opening the file and
