@@ -669,18 +669,22 @@ changing the <code>value</code> of any line of the form</p>
 <h3 id="general-settings">General settings<a class="headerlink" href="#general-settings" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p><code>stata_path</code>: the path on your file system to your Stata executable. Usually this can be found automatically in the <a href="./#package-install">install step</a>, but sometimes may need to be set manually.</p>
+<p><code>stata_path</code>: a string; the path on your file system to your Stata executable. Usually this can be found automatically in the <a href="./#package-install">install step</a>, but sometimes may need to be set manually.</p>
 </li>
 <li>
-<p><code>cache_directory</code>: the directory for the kernel to store temporary log files and graphs. By default, this is <code>~/.stata_kernel_cache</code>, where <code>~</code> means your home directory. You may wish to change this location if, for example, you're working under a Data Use Agreement where all related files must be stored in a specific directory.</p>
+<p><code>cache_directory</code>: a string; the directory for the kernel to store temporary log files and graphs. By default, this is <code>~/.stata_kernel_cache</code>, where <code>~</code> means your home directory. You may wish to change this location if, for example, you're working under a Data Use Agreement where all related files must be stored in a specific directory.</p>
 </li>
 <li>
-<p><code>execution_mode</code>: For macOS users, this allows for setting the method in which <code>stata_kernel</code> communicates with Stata. <code>automation</code> uses <a href="https://www.stata.com/automation/">Stata Automation</a> while <code>console</code> controls the console version of Stata.</p>
+<p><code>execution_mode</code>: <strong>macOS only</strong>, a string of either <code>"automation"</code> or <code>"console"</code>.</p>
+<p>This allows for setting the method in which <code>stata_kernel</code> communicates with Stata. <code>automation</code> uses <a href="https://www.stata.com/automation/">Stata Automation</a> while <code>console</code> controls the console version of Stata.</p>
 <p><code>console</code> is the default because it allows for multiple independent sessions
-of Stata to run at the same time. <code>automation</code> may be useful if you wish to
-browse the data interactively with <code>browse</code>.</p>
+of Stata to run at the same time. <code>automation</code> could be useful if you wish
+to also interact with the Stata GUI window.</p>
 <p>On Windows, all communication with Stata happens through Stata Automation,
 and on Linux/Unix all communication happens through the console.</p>
+</li>
+<li>
+<p><code>autocomplete_closing_symbol</code>: either <code>True</code> or <code>False</code>; whether autocompletion suggestions should include the closing symbol (i.e. <code>'</code> for a local macro or <code>}</code> if the global starts with <code>${</code>). This is <code>False</code> by default.</p>
 </li>
 </ul>
 <h3 id="graph-settings">Graph settings<a class="headerlink" href="#graph-settings" title="Permanent link">&para;</a></h3>
