@@ -628,19 +628,19 @@ downloaded automatically.</p>
 </ul>
 <details class="note" open="open"><summary>Windows-specific steps</summary><p>If you're using macOS or Linux, disregard this section.</p><ul><li>Install <a href="https://github.com/mhammond/pywin32/releases/latest">pywin32</a>, which lets Python talk to Stata. Choose the version of Python you have installed (you can find the version of Python installed by typing <code>python --version</code> into your command prompt.):<ul><li><a href="https://github.com/mhammond/pywin32/releases/download/b223/pywin32-223.win-amd64-py3.5.exe">Python 3.5</a></li><li><a href="https://github.com/mhammond/pywin32/releases/download/b223/pywin32-223.win-amd64-py3.6.exe">Python 3.6</a></li><li><a href="https://github.com/mhammond/pywin32/releases/download/b223/pywin32-223.win-amd64-py3.7.exe">Python 3.7</a></li></ul></li><li><p><a href="https://www.stata.com/automation/#install">Link the Stata Automation library</a>.</p><ol><li>In the installation directory (most likely <code>C:\Program Files (x86)\Stata15</code> or similar), right-click on the Stata executable, for example, <code>StataSE.exe</code>. Choose <code>Create Shortcut</code>.</li><li>Right-click on the newly created <code>Shortcut to StataSE.exe</code>, choose <code>Property</code>, and change the target from <code>"C:\Program Files\Stata15\StataSE.exe"</code> to <code>"C:\Program Files\Stata15\StataSE.exe" /Register</code>. Click <code>OK</code>.</li><li>Right-click on the updated <code>Shortcut to StataSE.exe</code>; choose <code>Run as administrator</code>.</li></ol></li></ul></details><h2 id="package-install">Package Install<a class="headerlink" href="#package-install" title="Permanent link">&para;</a></h2>
 <p>To install the kernel, from a terminal or command prompt run:</p>
-<div class="codehilite"><pre><span></span>$ pip install stata_kernel
-$ python -m stata_kernel.install
+<div class="codehilite"><pre><span></span>pip install stata_kernel
+python -m stata_kernel.install
 </pre></div>
 
 <p>The second command will try to find your Stata executable, and will warn you if
 it can't. In that case, you'll have to set it yourself. Refer to the
 <a href="#configuration">configuration</a> below.</p>
 <p>If Python 2 is the default version of Python on your system, you may need to use
-<div class="codehilite"><pre><span></span>$ pip3 install stata_kernel
-$ python3 -m stata_kernel.install
+<div class="codehilite"><pre><span></span>pip3 install stata_kernel
+python3 -m stata_kernel.install
 </pre></div></p>
 <p>To upgrade from a previous version of <code>stata_kernel</code>, from a terminal or command prompt run</p>
-<div class="codehilite"><pre><span></span>$ pip install stata_kernel --upgrade
+<div class="codehilite"><pre><span></span>pip install stata_kernel --upgrade
 </pre></div>
 
 <p>When upgrading, don't run <code>python -m stata_kernel.install</code> again. It's
