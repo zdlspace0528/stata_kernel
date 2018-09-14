@@ -46,6 +46,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://kylebarron.github.io/stata_kernel/using_jupyter/remote/</loc>
+     <lastmod>2018-09-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://kylebarron.github.io/stata_kernel/using_stata_kernel/intro/</loc>
      <lastmod>2018-09-14</lastmod>
      <changefreq>daily</changefreq>
