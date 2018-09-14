@@ -104,7 +104,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../../#hydrogen-in-atom" tabindex="1" class="md-skip">
+      <a href="../../#atom" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -343,13 +343,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#installation" title="Installation" class="md-nav__link">
-    Installation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#running-code" title="Running code" class="md-nav__link">
     Running code
   </a>
@@ -418,18 +411,6 @@
   <li class="md-nav__item">
     <a href="../console/" title="Jupyter Console" class="md-nav__link">
       Jupyter Console
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../remote/" title="Remote Servers" class="md-nav__link">
-      Remote Servers
     </a>
   </li>
 
@@ -556,13 +537,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#installation" title="Installation" class="md-nav__link">
-    Installation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#running-code" title="Running code" class="md-nav__link">
     Running code
   </a>
@@ -595,14 +569,12 @@
                   <a href="https://github.com/kylebarron/stata_kernel/blob/master/docs/src/using_jupyter/atom.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="hydrogen-in-atom">Hydrogen in Atom<a class="headerlink" href="#hydrogen-in-atom" title="Permanent link">&para;</a></h1>
-<p>Hydrogen is a package for the Atom text editor that connects with Jupyter kernels, such as <code>stata_kernel</code>, to display results interactively inside the text editor.</p>
-<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
-<p>Download the <a href="https://atom.io">Atom text editor</a> and install two add-on packages (go to Preferences &gt; Settings or type <kbd>Ctrl</kbd>+<kbd>,</kbd> (<kbd>Cmd</kbd>-<kbd>,</kbd> on macOS), then click Install):</p>
-<ul>
-<li><a href="https://atom.io/packages/hydrogen">Hydrogen</a>: this connects to Jupyter kernels and allows you to view results in-line next to your code. You can use it with Python, R, and Julia, as well as Stata.</li>
-<li><a href="https://atom.io/packages/language-stata">language-stata</a>: this provides syntax highlighting for Stata code and is necessary so that Hydrogen knows to connect to Stata, and not to something else.</li>
-</ul>
+                <h1 id="atom">Atom<a class="headerlink" href="#atom" title="Permanent link">&para;</a></h1>
+<p>Download the <a href="https://atom.io">Atom text editor</a> and install the
+<a href="https://atom.io/packages/hydrogen">Hydrogen</a>, and
+<a href="https://atom.io/packages/language-stata">language-stata</a> packages. The first
+connects to Jupyter kernels and allows you to view results in-line
+next to your code. You can use it with Python, R, and Julia, as well as Stata. The latter provides syntax highlighting for Stata code.</p>
 <p>Once those are installed, open a do-file and run <kbd>Ctrl</kbd>-<kbd>Enter</kbd> (<kbd>Cmd</kbd>-<kbd>Enter</kbd> on macOS) to start the Stata kernel.</p>
 <p>Below is a quick rundown of Hydrogen's capabilities. For more information, see <a href="https://nteract.gitbooks.io/hydrogen/docs/Usage/GettingStarted.html">Hydrogen's documentation</a>.</p>
 <h2 id="running-code">Running code<a class="headerlink" href="#running-code" title="Permanent link">&para;</a></h2>
