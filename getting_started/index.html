@@ -638,15 +638,14 @@
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p><strong>Python</strong>. In order to install the kernel, Python &gt;= 3.5 needs to be installed on the computer on which Stata is running.</p>
+<p><strong>Python</strong>. In order to install the kernel, Python 3.5, 3.6, or 3.7 needs to be installed on the computer on which Stata is running.</p>
 <p>I suggest installing the <a href="https://www.anaconda.com/download/">Anaconda
 distribution</a>, which doesn't require
 administrator privileges and is simple to install.</p>
 <p>The Anaconda installer includes many third party libraries for Python that
 <code>stata_kernel</code> doesn't use. If you don't plan to use Python and want to use
 less disk space, install <a href="https://conda.io/miniconda.html">Miniconda</a>, which
-includes few packages other than Python. Then in <a href="#package-install">Package
-Install</a> any other necessary dependencies will be
+includes few packages other than Python. Then when <a href="#package-install">installing the package</a> any other necessary dependencies will be
 downloaded automatically.</p>
 </li>
 </ul>
@@ -678,6 +677,11 @@ changing the <code>value</code> of any line of the form</p>
 <div class="codehilite"><pre><span></span>configuration_setting = value
 </pre></div>
 
+<p>You can also make changes to the configuration while the kernel is running with the <a href="../using_stata_kernel/magics/#set">%set magic</a>. For example:</p>
+<div class="codehilite"><pre><span></span>%set autocomplete_closing_symbol False
+%set graph_format png
+</pre></div>
+
 <h3 id="general-settings">General settings<a class="headerlink" href="#general-settings" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
@@ -700,13 +704,7 @@ and on Linux/Unix all communication happens through the console.</p>
 </li>
 </ul>
 <h3 id="graph-settings">Graph settings<a class="headerlink" href="#graph-settings" title="Permanent link">&para;</a></h3>
-<p>These settings can be changed during a session with the <code>%set</code> magic, like so:</p>
-<div class="codehilite"><pre><span></span>%set graph --format svg
-%set graph --scale 1
-%set graph --width 500
-%set graph --width 400 --height 300
-</pre></div>
-
+<p>These settings determine how graphs are displayed internally.</p>
 <ul>
 <li>
 <p><code>graph_format</code>: <code>svg</code> or <code>png</code>, the format to export and display graphs. By default this is <code>svg</code> for most operating systems and versions of Stata, but is <code>png</code> by default for Windows on Stata 14 and below.</p>
