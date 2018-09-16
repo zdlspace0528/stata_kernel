@@ -443,6 +443,26 @@
     Displaying graphs
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#graph-display-format" title="Graph display format" class="md-nav__link">
+    Graph display format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graph-redundancy" title="Graph redundancy" class="md-nav__link">
+    Graph redundancy
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -553,6 +573,26 @@
     Displaying graphs
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#graph-display-format" title="Graph display format" class="md-nav__link">
+    Graph display format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graph-redundancy" title="Graph redundancy" class="md-nav__link">
+    Graph redundancy
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -588,6 +628,26 @@
 <p><code>stata_kernel</code> displays graphs by quietly inserting a <code>graph export</code> command after any command that creates a graph, and then loading the saved file. The advantage of this approach is that it will display <em>all</em> graphs created, even inside a loop or program.</p>
 <p>To minimize false positives, the graph keyword must appear at the beginning of a line. To hide the display of a graph, just prefix <code>graph</code> with <a href="https://www.stata.com/help.cgi?quietly"><code>quietly</code></a>.</p>
 <p>To display graphs from user created commands (e.g., <code>coefplot</code>), use <code>graph display</code> after the command that generated the graph.</p>
+<h3 id="graph-display-format">Graph display format<a class="headerlink" href="#graph-display-format" title="Permanent link">&para;</a></h3>
+<p><code>stata_kernel</code> must export the image in some format in order to load and display it. Sadly, there are considerable pros and cons to each image format:</p>
+<ul>
+<li><code>png</code> files can't be created with the console version of Stata, and thus are off limits to the Linux and Mac (console) modes of <code>stata_kernel</code>. Additionally, they can look pixelated when scaled up.</li>
+<li><code>svg</code> files can be created by Stata 14 and 15 on all platforms, and look crisp at all sizes, but can't be used with LaTeX PDF output.</li>
+<li><code>pdf</code> files can be created by all recent versions of Stata on all platforms, look crisp at all sizes, and work in LaTeX PDF output, but can't display in Jupyter.</li>
+<li><code>tif</code> files are too large.</li>
+</ul>
+<p><code>stata_kernel</code> lets you set the display format to be <code>png</code>, <code>svg</code>, or <code>pdf</code>.</p>
+<h3 id="graph-redundancy">Graph redundancy<a class="headerlink" href="#graph-redundancy" title="Permanent link">&para;</a></h3>
+<p>One of the many amazing things about Jupyter Notebooks is that with a single click, you can export the notebook to an aesthetic PDF using LaTeX.</p>
+<p>Except on Windows using Stata 14 or earlier, <code>stata_kernel</code> displays images in <code>svg</code> format by default. However, as <a href="#graph-display-format">noted above</a>, these images can't be included in a LaTeX PDF export without conversion.</p>
+<p>To solve this problem, <code>stata_kernel</code> has the ability to hand Jupyter <em>both</em> the <code>svg</code> or <code>png</code> version of an image <em>and</em> the <code>pdf</code> version of the same image. While only the former will be displayed, the <code>pdf</code> version of the image will be stored in the Notebook and used when exported to PDF.</p>
+<p>While ease of use with LaTeX on macOS and Linux is a significant benefit, this redundancy does make <code>stata_kernel</code> delay slightly when displaying an image and enlarges the Jupyter Notebook file size (because two formats of every image will be stored within the Jupyter Notebook file).</p>
+<p>To turn off graph redundancy, change both configuration options to False:</p>
+<ul>
+<li><code>graph_svg_redundancy</code>: Whether to provide redundant PDF images when <code>svg</code> is the display format. <code>True</code> by default.</li>
+<li><code>graph_png_redundancy</code>: Whether to provide redundant PDF images when <code>png</code> is the display format. <code>False</code> by default.</li>
+</ul>
+<p>Because both image formats will be stored within the Jupyter Notebook file, <code>stata_kernel</code> will warn you if graph redundancy is on and an image is larger than 2 megabytes. To turn off this warning, set <code>graph_redundancy_warning</code> to <code>False</code>.</p>
 <h2 id="delimit-mode"><code>#delimit ;</code> mode<a class="headerlink" href="#delimit-mode" title="Permanent link">&para;</a></h2>
 <p>Stata lets you use <a href="https://www.stata.com/help.cgi?delimit"><code>;</code> as a command
 delimiter</a> in a do file after a line
