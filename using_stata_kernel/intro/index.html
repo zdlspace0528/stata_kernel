@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0, mkdocs-material-3.0.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
     
     
       
@@ -60,8 +60,8 @@
       <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
     
     
-      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
       
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,400i,700|Fira+Code">
         <style>body,input{font-family:"Nunito Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Code","Courier New",Courier,monospace}</style>
       
@@ -625,9 +625,12 @@
 <p>The Stata kernel is the bridge between Stata and the Jupyter ecosystem. It will work with any of the tools outlined in <a href="../../using_jupyter/intro/">Using Jupyter</a>.</p>
 <p>After <a href="../../getting_started/">installing</a> and optionally <a href="../../getting_started/#configuration">configuring</a> <code>stata_kernel</code>, it should be ready for use.</p>
 <h2 id="displaying-graphs">Displaying graphs<a class="headerlink" href="#displaying-graphs" title="Permanent link">&para;</a></h2>
-<p><code>stata_kernel</code> displays graphs by quietly inserting a <code>graph export</code> command after any command that creates a graph, and then loading the saved file. The advantage of this approach is that it will display <em>all</em> graphs created, even inside a loop or program.</p>
+<p><code>stata_kernel</code> displays graphs by quietly inserting a <code>graph export</code> command after any command that creates a graph, and then loading and displaying the saved file. The advantage of this approach is that it will display <em>all</em> graphs created, even inside a loop or program.</p>
 <p>To minimize false positives, the graph keyword must appear at the beginning of a line. To hide the display of a graph, just prefix <code>graph</code> with <a href="https://www.stata.com/help.cgi?quietly"><code>quietly</code></a>.</p>
-<p>To display graphs from user created commands (e.g., <code>coefplot</code>), use <code>graph display</code> after the command that generated the graph.</p>
+<p>To display graphs from user created commands (e.g., <code>coefplot</code> or <code>vioplot</code>),
+add the keyword to the <a href="../../getting_started#graph-settings"><code>user_graph_keywords</code> setting</a>. You can do this either in
+the configuration file before starting the session or with <code>%set
+user_graph_keywords coefplot,vioplot</code> during the session.</p>
 <h3 id="graph-display-format">Graph display format<a class="headerlink" href="#graph-display-format" title="Permanent link">&para;</a></h3>
 <p><code>stata_kernel</code> must export the image in some format in order to load and display it. Sadly, there are considerable pros and cons to each image format:</p>
 <ul>
@@ -740,7 +743,7 @@ debugging code difficult.</p>
     
       <script src="../../assets/javascripts/application.583bbe55.js"></script>
       
-      <script>app.initialize({version:"1.0",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
         <script src="../../helpers/helpers.js"></script>
       
