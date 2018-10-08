@@ -13,7 +13,7 @@
         <meta name="description" content="A Jupyter Kernel for Stata. Works with Windows, macOS, and Linux.">
       
       
-        <link rel="canonical" href="https://kylebarron.github.io/stata_kernel/using_stata_kernel/intro/">
+        <link rel="canonical" href="https://kylebarron.github.io/stata_kernel/using_stata_kernel/troubleshooting/">
       
       
         <meta name="author" content="Kyle Barron">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Introduction - stata_kernel</title>
+        <title>Troubleshooting - stata_kernel</title>
       
     
     
@@ -104,7 +104,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../../#using-the-stata-kernel" tabindex="1" class="md-skip">
+      <a href="../../#troubleshooting" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -130,7 +130,7 @@
                 stata_kernel
               </span>
               <span class="md-header-nav__topic">
-                Introduction
+                Troubleshooting
               </span>
             
           
@@ -410,76 +410,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Introduction
-      </label>
-    
-    <a href="./" title="Introduction" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../intro/" title="Introduction" class="md-nav__link">
       Introduction
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#displaying-graphs" title="Displaying graphs" class="md-nav__link">
-    Displaying graphs
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#graph-display-format" title="Graph display format" class="md-nav__link">
-    Graph display format
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#graph-redundancy" title="Graph redundancy" class="md-nav__link">
-    Graph redundancy
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#delimit-mode" title="#delimit ; mode" class="md-nav__link">
-    #delimit ; mode
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -511,11 +446,49 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../troubleshooting/" title="Troubleshooting" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Troubleshooting
+      </label>
+    
+    <a href="./" title="Troubleshooting" class="md-nav__link md-nav__link--active">
       Troubleshooting
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" title="Installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -581,35 +554,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#displaying-graphs" title="Displaying graphs" class="md-nav__link">
-    Displaying graphs
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#graph-display-format" title="Graph display format" class="md-nav__link">
-    Graph display format
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#graph-redundancy" title="Graph redundancy" class="md-nav__link">
-    Graph redundancy
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#delimit-mode" title="#delimit ; mode" class="md-nav__link">
-    #delimit ; mode
+  <a href="#installation" title="Installation" class="md-nav__link">
+    Installation
   </a>
   
 </li>
@@ -630,49 +576,22 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/kylebarron/stata_kernel/blob/master/docs/src/using_stata_kernel/intro.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/kylebarron/stata_kernel/blob/master/docs/src/using_stata_kernel/troubleshooting.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="using-the-stata-kernel">Using the Stata Kernel<a class="headerlink" href="#using-the-stata-kernel" title="Permanent link">&para;</a></h1>
-<p>The Stata kernel is the bridge between Stata and the Jupyter ecosystem. It will work with any of the tools outlined in <a href="../../using_jupyter/intro/">Using Jupyter</a>.</p>
-<p>After <a href="../../getting_started/">installing</a> and optionally <a href="../../getting_started/#configuration">configuring</a> <code>stata_kernel</code>, it should be ready for use.</p>
-<h2 id="displaying-graphs">Displaying graphs<a class="headerlink" href="#displaying-graphs" title="Permanent link">&para;</a></h2>
-<p><code>stata_kernel</code> displays graphs by quietly inserting a <code>graph export</code> command after any command that creates a graph, and then loading and displaying the saved file. The advantage of this approach is that it will display <em>all</em> graphs created, even inside a loop or program.</p>
-<p>To minimize false positives, the graph keyword must appear at the beginning of a line. To hide the display of a graph, just prefix <code>graph</code> with <a href="https://www.stata.com/help.cgi?quietly"><code>quietly</code></a>.</p>
-<p>To display graphs from user created commands (e.g., <code>coefplot</code> or <code>vioplot</code>),
-add the keyword to the <a href="../../getting_started#graph-settings"><code>user_graph_keywords</code> setting</a>. You can do this either in
-the configuration file before starting the session or with <code>%set
-user_graph_keywords coefplot,vioplot</code> during the session.</p>
-<h3 id="graph-display-format">Graph display format<a class="headerlink" href="#graph-display-format" title="Permanent link">&para;</a></h3>
-<p><code>stata_kernel</code> must export the image in some format in order to load and display it. Sadly, there are considerable pros and cons to each image format:</p>
+                <h1 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h1>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>png</code> files can't be created with the console version of Stata, and thus are off limits to the Linux and Mac (console) modes of <code>stata_kernel</code>. Additionally, they can look pixelated when scaled up.</li>
-<li><code>svg</code> files can be created by Stata 14 and 15 on all platforms, and look crisp at all sizes, but can't be used with LaTeX PDF output.</li>
-<li><code>pdf</code> files can be created by all recent versions of Stata on all platforms, look crisp at all sizes, and work in LaTeX PDF output, but can't display in Jupyter.</li>
-<li><code>tif</code> files are too large.</li>
+<li>
+<p>If the <code>pip install</code> step gives you an error like "DEPRECATION: Uninstalling a distutils installed project (pexpect) has been deprecated", try</p>
+<div class="codehilite"><pre><span></span>pip install stata_kernel --ignore-install pexpect
+</pre></div>
+
+</li>
+<li>
+<p>If you have multiple installations of Python on your machine, make sure you run <code>python -m stata_kernel.install</code> during installation with the same Python executable as the one you usually use. This matters especially when using several Python virtual environments. You'll need to install <code>stata_kernel</code> within each environment you use.</p>
+</li>
 </ul>
-<p><code>stata_kernel</code> lets you set the display format to be <code>png</code>, <code>svg</code>, or <code>pdf</code>.</p>
-<h3 id="graph-redundancy">Graph redundancy<a class="headerlink" href="#graph-redundancy" title="Permanent link">&para;</a></h3>
-<p>One of the many amazing things about Jupyter Notebooks is that with a single click, you can export the notebook to an aesthetic PDF using LaTeX.</p>
-<p>Except on Windows using Stata 14 or earlier, <code>stata_kernel</code> displays images in <code>svg</code> format by default. However, as <a href="#graph-display-format">noted above</a>, these images can't be included in a LaTeX PDF export without conversion.</p>
-<p>To solve this problem, <code>stata_kernel</code> has the ability to hand Jupyter <em>both</em> the <code>svg</code> or <code>png</code> version of an image <em>and</em> the <code>pdf</code> version of the same image. While only the former will be displayed, the <code>pdf</code> version of the image will be stored in the Notebook and used when exported to PDF.</p>
-<p>While ease of use with LaTeX on macOS and Linux is a significant benefit, this redundancy does make <code>stata_kernel</code> delay slightly when displaying an image and enlarges the Jupyter Notebook file size (because two formats of every image will be stored within the Jupyter Notebook file).</p>
-<p>To turn off graph redundancy, change both configuration options to False:</p>
-<ul>
-<li><code>graph_svg_redundancy</code>: Whether to provide redundant PDF images when <code>svg</code> is the display format. <code>True</code> by default.</li>
-<li><code>graph_png_redundancy</code>: Whether to provide redundant PDF images when <code>png</code> is the display format. <code>False</code> by default.</li>
-</ul>
-<p>Because both image formats will be stored within the Jupyter Notebook file, <code>stata_kernel</code> will warn you if graph redundancy is on and an image is larger than 2 megabytes. To turn off this warning, set <code>graph_redundancy_warning</code> to <code>False</code>.</p>
-<h2 id="delimit-mode"><code>#delimit ;</code> mode<a class="headerlink" href="#delimit-mode" title="Permanent link">&para;</a></h2>
-<p>Stata lets you use <a href="https://www.stata.com/help.cgi?delimit"><code>;</code> as a command
-delimiter</a> in a do file after a line
-<code>#delimit ;</code>. This can be helpful when writing very long commands, like
-complicated graphs, as it allows for more free-flowing line wrapping. But Stata
-doesn't allow for running <code>;</code>-delimited code interactively, which makes
-debugging code difficult.</p>
-<p><code>stata_kernel</code> lets you code interactively with semicolons as the delimiter for commands within the <code>#delimit ;</code> mode. When activated, it first removes the extra line breaks in the input code and then removes the semicolon, resulting in the code's carriage return-delimited equivalent, which can then be sent to Stata.</p>
-<p>To turn this mode on, just run <code>#delimit ;</code>. To turn it off, run <code>#delimit cr</code>. To check the current delimiter, run <code>%delimit</code>. Code can switch back and forth between delimiters several times with no issue.</p>
-<p>Note that when the setting is enabled, sending code to Stata without a <code>;</code> at the end will be returned as invalid.</p>
                 
                   
                 
@@ -693,7 +612,7 @@ debugging code difficult.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../using_jupyter/remote/" title="Remote Servers" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../limitations/" title="Limitations" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -702,19 +621,19 @@ debugging code difficult.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Remote Servers
+                Limitations
               </span>
             </div>
           </a>
         
         
-          <a href="../magics/" title="Magics" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../comparison_with_ipystata/" title="Comparison with ipystata" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Magics
+                Comparison with ipystata
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

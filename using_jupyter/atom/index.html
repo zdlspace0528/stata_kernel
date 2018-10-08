@@ -354,6 +354,26 @@
     Running code
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#output" title="Output" class="md-nav__link">
+    Output
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#watch-expressions" title="Watch Expressions" class="md-nav__link">
+    Watch Expressions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -482,20 +502,32 @@
   </li>
 
         
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
+          
+          
+          
 
 
   <li class="md-nav__item">
-    <a href="../../troubleshooting/" title="Troubleshooting" class="md-nav__link">
+    <a href="../../using_stata_kernel/limitations/" title="Limitations" class="md-nav__link">
+      Limitations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../using_stata_kernel/troubleshooting/" title="Troubleshooting" class="md-nav__link">
       Troubleshooting
     </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -567,6 +599,26 @@
     Running code
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#output" title="Output" class="md-nav__link">
+    Output
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#watch-expressions" title="Watch Expressions" class="md-nav__link">
+    Watch Expressions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -612,6 +664,17 @@
 <li>Cursor block. When <code>Hydrogen: Run</code> is called and no code is selected, Hydrogen runs the current line. If code following the present line is more indented than the current line, Hydrogen will run the entire indented block.</li>
 <li>Cell. A cell is a block of lines to be executed at once. They are defined using <code>%%</code> inside comments. See <a href="https://nteract.gitbooks.io/hydrogen/docs/Usage/GettingStarted.html#hydrogen-run-cell">here</a> for more information.</li>
 </ul>
+<h3 id="output">Output<a class="headerlink" href="#output" title="Permanent link">&para;</a></h3>
+<p>Output will display directly beside or beneath the block of code that was
+selected to be run. Code that does not produce any output will show a check mark
+when completed.</p>
+<h3 id="watch-expressions">Watch Expressions<a class="headerlink" href="#watch-expressions" title="Permanent link">&para;</a></h3>
+<p>Hydrogen allows for <a href="https://nteract.gitbooks.io/hydrogen/docs/Usage/GettingStarted.html#watch-expressions"><em>watch expressions</em></a>. These are expressions that are automatically re-run after every command sent to the kernel. This is convenient for viewing regression output, graphs, or the data set after changing a parameter.</p>
+<p>Note that since the watch expression is run after <em>every</em> command, it shouldn't be something that changes the state of the data. For example, <code>replace mpg = mpg * 2</code> would be unwise to set as a watch expression because that would change the column's data after every command.</p>
+<p>Using watch expressions with a graph:
+<img alt="" src="../../img/hydrogen-watch-graph.gif" /></p>
+<p>Using watch expressions to browse data:
+<img alt="" src="../../img/hydrogen-watch-browse.gif" /></p>
 <h2 id="indentation-and-for-loops">Indentation and for loops<a class="headerlink" href="#indentation-and-for-loops" title="Permanent link">&para;</a></h2>
 <p>Stata <code>foreach</code> loops and programs must be sent as a whole to the kernel. The
 easiest way to make sure that this happens is to indent all code pertaining to
