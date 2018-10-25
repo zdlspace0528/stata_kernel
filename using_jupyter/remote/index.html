@@ -316,8 +316,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../atom/" title="Atom" class="md-nav__link">
-      Atom
+    <a href="../atom/" title="Hydrogen in Atom" class="md-nav__link">
+      Hydrogen in Atom
     </a>
   </li>
 
@@ -401,6 +401,13 @@
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" title="Introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#overview" title="Overview" class="md-nav__link">
@@ -570,8 +577,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../comparison_with_ipystata/" title="Comparison with ipystata" class="md-nav__link">
-      Comparison with ipystata
+    <a href="../../comparison_with_ipystata/" title="Comparison with IPyStata" class="md-nav__link">
+      Comparison with IPyStata
     </a>
   </li>
 
@@ -619,6 +626,13 @@
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" title="Introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#overview" title="Overview" class="md-nav__link">
@@ -714,8 +728,19 @@
                 
                 
                 <h1 id="remote-servers">Remote Servers<a class="headerlink" href="#remote-servers" title="Permanent link">&para;</a></h1>
-<p>Using Jupyter to run code on a remote server is one of my favorite parts of Jupyter. Since the only data communicated to and from the server are the text of the input and output command, this has low latency, and is fast even on slower networks.</p>
-<p>When using a program like <code>tmux</code> or <code>screen</code> on the server, you can reconnect <em>to the same Jupyter kernel</em> (and thus the same Stata session) after becoming disconnected to the network (i.e. if a VPN times out). In contrast, with a normal console or GUI Stata session, there is no way to reconnect to the running Stata session, and you'd have to recreate the state of the environment from scratch.</p>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>There are two ways to use Jupyter on a remote server.</p>
+<ul>
+<li>
+<p>The less-usable way, but which is simpler to get started with, is simply using <a href="../console">Jupyter Console</a> within a remote terminal. This gives you many—but not all—of the features of <code>stata_kernel</code>, including syntax highlighting, free-flowing comments, autocompletions, and <code>#delimit ;</code> support. To do this, all you need to do is install <code>stata_kernel</code> on the remote server (Stata must also be installed on that remote server).</p>
+</li>
+<li>
+<p>The much more powerful way to run Jupyter on a remote server is to set it up so that you're working with Jupyter Notebook in your local web browser, or with Hydrogen in Atom running locally, but where all the computation happens on the remote server. This is a little more involved to set up, but, once running, makes working on a remote server effortless.</p>
+<p>This setup is one of my favorite parts of Jupyter. The only information communicated to the server is the input command as text, and the only information communicated back from the server to the local computer is the output of the command. Since very little information is sent back and forth, this setup has very low latency, which means that it's fast even on slower networks: if you're waiting on output, it's likely because Stata is slow, not the connection.</p>
+<p>When using a program like <code>tmux</code> or <code>screen</code> on the server, you can reconnect <em>to the same Jupyter kernel</em> (and thus the same Stata session) after becoming disconnected from the network (i.e. if a VPN times out). In contrast, with a normal console or GUI Stata session, there is no way to reconnect to the running Stata session, and you'd have to recreate the state of the environment from scratch.</p>
+</li>
+</ul>
+<p>The rest of this document explains how to set up the latter method.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>It's important to understand the security implications of allowing remote
@@ -854,6 +879,8 @@ through SSH. Setting up an SSH server is outside the scope of this guide.</p>
     
       <a href="https://github.com/kylebarron" class="md-footer-social__link fa fa-github"></a>
     
+      <a href="https://twitter.com/kylebarron2" class="md-footer-social__link fa fa-twitter"></a>
+    
       <a href="https://keybase.io/kylebarron" class="md-footer-social__link fa fa-key"></a>
     
   </div>
@@ -868,10 +895,6 @@ through SSH. Setting up an SSH server is outside the scope of this guide.</p>
       <script src="../../assets/javascripts/application.583bbe55.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
-      
-        <script src="../../helpers/helpers.js"></script>
-      
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
     
     

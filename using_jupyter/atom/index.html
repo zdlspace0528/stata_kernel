@@ -42,7 +42,7 @@
     
     
       
-        <title>Atom - stata_kernel</title>
+        <title>Hydrogen in Atom - stata_kernel</title>
       
     
     
@@ -130,7 +130,7 @@
                 stata_kernel
               </span>
               <span class="md-header-nav__topic">
-                Atom
+                Hydrogen in Atom
               </span>
             
           
@@ -325,11 +325,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Atom
+        Hydrogen in Atom
       </label>
     
-    <a href="./" title="Atom" class="md-nav__link md-nav__link--active">
-      Atom
+    <a href="./" title="Hydrogen in Atom" class="md-nav__link md-nav__link--active">
+      Hydrogen in Atom
     </a>
     
       
@@ -345,6 +345,33 @@
         <li class="md-nav__item">
   <a href="#installation" title="Installation" class="md-nav__link">
     Installation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atom" title="Atom" class="md-nav__link">
+    Atom
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hydrogen" title="Hydrogen" class="md-nav__link">
+    Hydrogen
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-atom" title="Using Atom" class="md-nav__link">
+    Using Atom
   </a>
   
 </li>
@@ -537,8 +564,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../comparison_with_ipystata/" title="Comparison with ipystata" class="md-nav__link">
-      Comparison with ipystata
+    <a href="../../comparison_with_ipystata/" title="Comparison with IPyStata" class="md-nav__link">
+      Comparison with IPyStata
     </a>
   </li>
 
@@ -590,6 +617,33 @@
         <li class="md-nav__item">
   <a href="#installation" title="Installation" class="md-nav__link">
     Installation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atom" title="Atom" class="md-nav__link">
+    Atom
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hydrogen" title="Hydrogen" class="md-nav__link">
+    Hydrogen
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-atom" title="Using Atom" class="md-nav__link">
+    Using Atom
   </a>
   
 </li>
@@ -649,14 +703,23 @@
                 
                 <h1 id="hydrogen-in-atom">Hydrogen in Atom<a class="headerlink" href="#hydrogen-in-atom" title="Permanent link">&para;</a></h1>
 <p>Hydrogen is a package for the Atom text editor that connects with Jupyter kernels, such as <code>stata_kernel</code>, to display results interactively inside the text editor.</p>
+<p>I'll go over how to install Atom and Hydrogen, and then provide a quick overview of Hydrogen's capabilities. For more information on how to use Hydrogen, see <a href="https://nteract.gitbooks.io/hydrogen/docs/Usage/GettingStarted.html">Hydrogen's documentation</a>.</p>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
-<p>Download the <a href="https://atom.io">Atom text editor</a> and install two add-on packages (go to Preferences &gt; Settings or type <kbd>Ctrl</kbd>+<kbd>,</kbd> (<kbd>Cmd</kbd>-<kbd>,</kbd> on macOS), then click Install):</p>
+<p>Atom and Hydrogen are both free and open source software, just like <code>stata_kernel</code>. The download and install is free and easy.</p>
+<h3 id="atom">Atom<a class="headerlink" href="#atom" title="Permanent link">&para;</a></h3>
+<p>Go to <a href="https://atom.io">atom.io</a>, choose the installer for your operating system, then double click the downloaded file.</p>
+<h3 id="hydrogen">Hydrogen<a class="headerlink" href="#hydrogen" title="Permanent link">&para;</a></h3>
+<p>Next you'll need to install a couple add-on packages:</p>
 <ul>
 <li><a href="https://atom.io/packages/hydrogen">Hydrogen</a>: this connects to Jupyter kernels and allows you to view results in-line next to your code. You can use it with Python, R, and Julia, as well as Stata.</li>
-<li><a href="https://atom.io/packages/language-stata">language-stata</a>: this provides syntax highlighting for Stata code and is necessary so that Hydrogen knows to connect to Stata, and not to something else.</li>
+<li><a href="https://atom.io/packages/language-stata">language-stata</a>: this provides syntax highlighting for Stata code and is necessary so that Hydrogen knows that a file with extension <code>.do</code> is a Stata file.</li>
 </ul>
+<p>To install these, go to the Atom Settings. You can get there by clicking Preferences &gt; Settings in the menus or by using the keyboard shortcut <kbd>Ctrl</kbd>+<kbd>,</kbd> (<kbd>Cmd</kbd>-<kbd>,</kbd> on macOS). Then click <em>Install</em> on the menu in the left, and type in <code>Hydrogen</code>, and <code>language-stata</code>, and click <code>Install</code>.</p>
 <p>Once those are installed, open a do-file and run <kbd>Ctrl</kbd>-<kbd>Enter</kbd> (<kbd>Cmd</kbd>-<kbd>Enter</kbd> on macOS) to start the Stata kernel.</p>
-<p>Below is a quick rundown of Hydrogen's capabilities. For more information, see <a href="https://nteract.gitbooks.io/hydrogen/docs/Usage/GettingStarted.html">Hydrogen's documentation</a>.</p>
+<h2 id="using-atom">Using Atom<a class="headerlink" href="#using-atom" title="Permanent link">&para;</a></h2>
+<p>If you've never used Atom before, you're in luck, because it's quite simple and intuitive to use.
+<a href="https://flight-manual.atom.io/getting-started/sections/atom-basics/">Read here</a> for some basics about how to use Atom.</p>
+<p>The most important thing to know is that you can access every command available to you in Atom by using the keyboard shortcut <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> (<kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> on macOS). This brings up a menu, called the <em>Command Palette</em>, where you can find any command that any package provides.</p>
 <h2 id="running-code">Running code<a class="headerlink" href="#running-code" title="Permanent link">&para;</a></h2>
 <p>There are three main ways to run code using Hydrogen:</p>
 <ul>
@@ -676,11 +739,12 @@ when completed.</p>
 <p>Using watch expressions to browse data:
 <img alt="" src="../../img/hydrogen-watch-browse.gif" /></p>
 <h2 id="indentation-and-for-loops">Indentation and for loops<a class="headerlink" href="#indentation-and-for-loops" title="Permanent link">&para;</a></h2>
-<p>Stata <code>foreach</code> loops and programs must be sent as a whole to the kernel. The
-easiest way to make sure that this happens is to indent all code pertaining to
-the block. Starting in version 1.6.4 of <code>language-stata</code>, this will
-automatically include the last line of a for loop or program even if that last
-line has the same indentation as the initial line.</p>
+<p>Stata <code>foreach</code> loops and programs must be sent as a whole to the kernel. If you
+send only part of a loop, you'll receive a reply that insufficient input was
+provided.</p>
+<p>The easiest way to make sure that this happens is to indent all code pertaining
+to a block. This will ensure all lines of the block are sent to <code>stata_kernel</code>,
+even if the ending <code>}</code> has the same indentation as the initial line.</p>
 <p>If the cursor is anywhere on the first line in the segment below, and you run
 <kbd>Ctrl</kbd>-<kbd>Enter</kbd> or <kbd>Shift</kbd>-<kbd>Enter</kbd> (which
 moves your cursor to the next line), it will include the final <code>}</code>.</p>
@@ -757,6 +821,8 @@ moves your cursor to the next line), it will include the final <code>}</code>.</
     
       <a href="https://github.com/kylebarron" class="md-footer-social__link fa fa-github"></a>
     
+      <a href="https://twitter.com/kylebarron2" class="md-footer-social__link fa fa-twitter"></a>
+    
       <a href="https://keybase.io/kylebarron" class="md-footer-social__link fa fa-key"></a>
     
   </div>
@@ -771,10 +837,6 @@ moves your cursor to the next line), it will include the final <code>}</code>.</
       <script src="../../assets/javascripts/application.583bbe55.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
-      
-        <script src="../../helpers/helpers.js"></script>
-      
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
     
     

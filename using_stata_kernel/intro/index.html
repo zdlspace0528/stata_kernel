@@ -314,8 +314,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../using_jupyter/atom/" title="Atom" class="md-nav__link">
-      Atom
+    <a href="../../using_jupyter/atom/" title="Hydrogen in Atom" class="md-nav__link">
+      Hydrogen in Atom
     </a>
   </li>
 
@@ -447,6 +447,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#graph-not-displaying" title="Graph not displaying?" class="md-nav__link">
+    Graph not displaying?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#graph-display-format" title="Graph display format" class="md-nav__link">
     Graph display format
   </a>
@@ -462,6 +469,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autocompletion" title="Autocompletion" class="md-nav__link">
+    Autocompletion
+  </a>
   
 </li>
       
@@ -530,8 +544,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../comparison_with_ipystata/" title="Comparison with ipystata" class="md-nav__link">
-      Comparison with ipystata
+    <a href="../../comparison_with_ipystata/" title="Comparison with IPyStata" class="md-nav__link">
+      Comparison with IPyStata
     </a>
   </li>
 
@@ -589,6 +603,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#graph-not-displaying" title="Graph not displaying?" class="md-nav__link">
+    Graph not displaying?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#graph-display-format" title="Graph display format" class="md-nav__link">
     Graph display format
   </a>
@@ -604,6 +625,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autocompletion" title="Autocompletion" class="md-nav__link">
+    Autocompletion
+  </a>
   
 </li>
       
@@ -634,26 +662,34 @@
                 
                 
                 <h1 id="using-the-stata-kernel">Using the Stata Kernel<a class="headerlink" href="#using-the-stata-kernel" title="Permanent link">&para;</a></h1>
-<p>The Stata kernel is the bridge between Stata and the Jupyter ecosystem. It will work with any of the tools outlined in <a href="../../using_jupyter/intro/">Using Jupyter</a>.</p>
-<p>After <a href="../../getting_started/">installing</a> and optionally <a href="../../getting_started/#configuration">configuring</a> <code>stata_kernel</code>, it should be ready for use.</p>
+<p><code>stata_kernel</code> is the bridge between Stata and the Jupyter ecosystem. It will work with any of the tools outlined in <a href="../../using_jupyter/intro/">Using Jupyter</a>. After <a href="../../getting_started/">installing</a> and optionally <a href="../../getting_started/#configuration">configuring</a> <code>stata_kernel</code>, it should be ready for use.</p>
+<p>On the rest of this page, you can learn more about some of the features <code>stata_kernel</code> provides.</p>
 <h2 id="displaying-graphs">Displaying graphs<a class="headerlink" href="#displaying-graphs" title="Permanent link">&para;</a></h2>
-<p><code>stata_kernel</code> displays graphs by quietly inserting a <code>graph export</code> command after any command that creates a graph, and then loading and displaying the saved file. The advantage of this approach is that it will display <em>all</em> graphs created, even inside a loop or program.</p>
+<p><code>stata_kernel</code> displays graphs by quietly inserting a <code>graph export</code> command after any command that creates a graph, and then loading and displaying the saved file. The advantage of this approach is that it will display <em>all</em> graphs created, even inside a loop or program, as long as that program was defined in text you run with the kernel.</p>
 <p>To minimize false positives, the graph keyword must appear at the beginning of a line. To hide the display of a graph, just prefix <code>graph</code> with <a href="https://www.stata.com/help.cgi?quietly"><code>quietly</code></a>.</p>
-<p>To display graphs from user created commands (e.g., <code>coefplot</code> or <code>vioplot</code>),
-add the keyword to the <a href="../../getting_started#graph-settings"><code>user_graph_keywords</code> setting</a>. You can do this either in
-the configuration file before starting the session or with <code>%set
-user_graph_keywords coefplot,vioplot</code> during the session.</p>
+<h3 id="graph-not-displaying">Graph not displaying?<a class="headerlink" href="#graph-not-displaying" title="Permanent link">&para;</a></h3>
+<p><code>stata_kernel</code> looks for <em>graph commands</em> in your code, and requires that these be the first non-whitespace characters on a given line. This means that if you prefix <code>scatter</code> with <code>quietly</code>, <code>noisily</code>, or <code>capture</code>, the graph won't be displayed.</p>
+<p>In order to force display of a graph, you can run:
+<div class="codehilite"><pre><span></span><span class="k">graph display</span>
+</pre></div></p>
+<p><code>stata_kernel</code> checks your command against a list of graph commands, and only tries to export a graph if one matches. This means that some user-created commands that export graphs (e.g., <code>coefplot</code> or <code>vioplot</code>) won't work out of the box.</p>
+<p>To display graphs from user created commands, add the command name to the
+<a href="../../getting_started#user_graph_keywords"><code>user_graph_keywords</code></a> setting. You
+can do this either in the configuration file before starting the session or with
+<div class="codehilite"><pre><span></span>%set user_graph_keywords command1, command2, ...
+</pre></div>
+during the session.</p>
 <h3 id="graph-display-format">Graph display format<a class="headerlink" href="#graph-display-format" title="Permanent link">&para;</a></h3>
 <p><code>stata_kernel</code> must export the image in some format in order to load and display it. Sadly, there are considerable pros and cons to each image format:</p>
 <ul>
 <li><code>png</code> files can't be created with the console version of Stata, and thus are off limits to the Linux and Mac (console) modes of <code>stata_kernel</code>. Additionally, they can look pixelated when scaled up.</li>
 <li><code>svg</code> files can be created by Stata 14 and 15 on all platforms, and look crisp at all sizes, but can't be used with LaTeX PDF output.</li>
-<li><code>pdf</code> files can be created by all recent versions of Stata on all platforms, look crisp at all sizes, and work in LaTeX PDF output, but can't display in Jupyter.</li>
+<li><code>pdf</code> files can be created by all recent versions of Stata on all platforms, look crisp at all sizes, and work in LaTeX PDF output, but <a href="../../using_jupyter/lab">JupyterLab</a> is the only front end in which they'll display correctly.</li>
 <li><code>tif</code> files are too large.</li>
 </ul>
 <p><code>stata_kernel</code> lets you set the display format to be <code>png</code>, <code>svg</code>, or <code>pdf</code>.</p>
 <h3 id="graph-redundancy">Graph redundancy<a class="headerlink" href="#graph-redundancy" title="Permanent link">&para;</a></h3>
-<p>One of the many amazing things about Jupyter Notebooks is that with a single click, you can export the notebook to an aesthetic PDF using LaTeX.</p>
+<p>One of the many amazing things about Jupyter Notebooks is that with a single click, you can <a href="https://nbconvert.readthedocs.io/en/latest/">export the notebook</a> to an aesthetic PDF using LaTeX.</p>
 <p>Except on Windows using Stata 14 or earlier, <code>stata_kernel</code> displays images in <code>svg</code> format by default. However, as <a href="#graph-display-format">noted above</a>, these images can't be included in a LaTeX PDF export without conversion.</p>
 <p>To solve this problem, <code>stata_kernel</code> has the ability to hand Jupyter <em>both</em> the <code>svg</code> or <code>png</code> version of an image <em>and</em> the <code>pdf</code> version of the same image. While only the former will be displayed, the <code>pdf</code> version of the image will be stored in the Notebook and used when exported to PDF.</p>
 <p>While ease of use with LaTeX on macOS and Linux is a significant benefit, this redundancy does make <code>stata_kernel</code> delay slightly when displaying an image and enlarges the Jupyter Notebook file size (because two formats of every image will be stored within the Jupyter Notebook file).</p>
@@ -663,6 +699,10 @@ user_graph_keywords coefplot,vioplot</code> during the session.</p>
 <li><code>graph_png_redundancy</code>: Whether to provide redundant PDF images when <code>png</code> is the display format. <code>False</code> by default.</li>
 </ul>
 <p>Because both image formats will be stored within the Jupyter Notebook file, <code>stata_kernel</code> will warn you if graph redundancy is on and an image is larger than 2 megabytes. To turn off this warning, set <code>graph_redundancy_warning</code> to <code>False</code>.</p>
+<h2 id="autocompletion">Autocompletion<a class="headerlink" href="#autocompletion" title="Permanent link">&para;</a></h2>
+<p>Based on the current Stata environment, <code>stata_kernel</code> will autocomplete variables, locals, globals, scalars, matrices, <em>and file paths</em> (as of version 1.6.0).</p>
+<p>As of version 1.6.0, file paths will only generate suggestions if there are no spaces in what you've typed. In the future I hope to relax this restriction, so that quoted file paths with spaces will still allow autocomplete.</p>
+<p>By default, autocomplete does not include the trailing character (such as a <code>'</code> for a local macro) when you select a suggestion. This is because front ends like <a href="../../using_jupyter/atom">Hydrogen</a> already autocomplete the <code>'</code> for you after you type a <code>`</code>. If you're using a different front end, you can turn on the <a href="../../getting_started#autocomplete_closing_symbol"><code>autocomplete_closing_symbol</code></a> setting so that locals include the ending <code>'</code>.</p>
 <h2 id="delimit-mode"><code>#delimit ;</code> mode<a class="headerlink" href="#delimit-mode" title="Permanent link">&para;</a></h2>
 <p>Stata lets you use <a href="https://www.stata.com/help.cgi?delimit"><code>;</code> as a command
 delimiter</a> in a do file after a line
@@ -742,6 +782,8 @@ debugging code difficult.</p>
     
       <a href="https://github.com/kylebarron" class="md-footer-social__link fa fa-github"></a>
     
+      <a href="https://twitter.com/kylebarron2" class="md-footer-social__link fa fa-twitter"></a>
+    
       <a href="https://keybase.io/kylebarron" class="md-footer-social__link fa fa-key"></a>
     
   </div>
@@ -756,10 +798,6 @@ debugging code difficult.</p>
       <script src="../../assets/javascripts/application.583bbe55.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
-      
-        <script src="../../helpers/helpers.js"></script>
-      
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
     
     

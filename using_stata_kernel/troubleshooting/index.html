@@ -314,8 +314,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../using_jupyter/atom/" title="Atom" class="md-nav__link">
-      Atom
+    <a href="../../using_jupyter/atom/" title="Hydrogen in Atom" class="md-nav__link">
+      Hydrogen in Atom
     </a>
   </li>
 
@@ -481,6 +481,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#running" title="Running" class="md-nav__link">
+    Running
+  </a>
+  
+</li>
+      
       
       
       
@@ -503,8 +510,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../comparison_with_ipystata/" title="Comparison with ipystata" class="md-nav__link">
-      Comparison with ipystata
+    <a href="../../comparison_with_ipystata/" title="Comparison with IPyStata" class="md-nav__link">
+      Comparison with IPyStata
     </a>
   </li>
 
@@ -560,6 +567,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#running" title="Running" class="md-nav__link">
+    Running
+  </a>
+  
+</li>
+      
       
       
       
@@ -590,6 +604,20 @@
 </li>
 <li>
 <p>If you have multiple installations of Python on your machine, make sure you run <code>python -m stata_kernel.install</code> during installation with the same Python executable as the one you usually use. This matters especially when using several Python virtual environments. You'll need to install <code>stata_kernel</code> within each environment you use.</p>
+</li>
+</ul>
+<h2 id="running">Running<a class="headerlink" href="#running" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>If you're on Windows, and upon trying to start <code>stata_kernel</code> you see an error message in the terminal window that ends with:</p>
+<div class="codehilite"><pre><span></span>pywintypes.com_error: (-2147221005, &#39;Invalid class string&#39;, None, None)
+</pre></div>
+
+<p>That means that the Stata type library has not been correctly registered, so
+<code>stata_kernel</code> is unable to communicate with Stata. See the <a href="../../getting_started#prerequisites">instructions
+here</a> (under "Windows-specific steps")
+for how to register the type library. It is not necessary to reinstall
+<code>stata_kernel</code> after this.</p>
 </li>
 </ul>
                 
@@ -627,13 +655,13 @@
           </a>
         
         
-          <a href="../../comparison_with_ipystata/" title="Comparison with ipystata" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../comparison_with_ipystata/" title="Comparison with IPyStata" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Comparison with ipystata
+                Comparison with IPyStata
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -661,6 +689,8 @@
     
       <a href="https://github.com/kylebarron" class="md-footer-social__link fa fa-github"></a>
     
+      <a href="https://twitter.com/kylebarron2" class="md-footer-social__link fa fa-twitter"></a>
+    
       <a href="https://keybase.io/kylebarron" class="md-footer-social__link fa fa-key"></a>
     
   </div>
@@ -675,10 +705,6 @@
       <script src="../../assets/javascripts/application.583bbe55.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
-      
-        <script src="../../helpers/helpers.js"></script>
-      
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
     
     
