@@ -422,6 +422,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../configuration/" title="Configuration" class="md-nav__link">
+      Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -488,6 +500,27 @@
         <li class="md-nav__item">
   <a href="#set" title="%set" class="md-nav__link">
     %set
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#show_gui" title="%show_gui" class="md-nav__link">
+    %show_gui
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hide_gui" title="%hide_gui" class="md-nav__link">
+    %hide_gui
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#status" title="%status" class="md-nav__link">
+    %status
   </a>
   
 </li>
@@ -626,6 +659,27 @@
         <li class="md-nav__item">
   <a href="#set" title="%set" class="md-nav__link">
     %set
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#show_gui" title="%show_gui" class="md-nav__link">
+    %show_gui
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hide_gui" title="%hide_gui" class="md-nav__link">
+    %hide_gui
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#status" title="%status" class="md-nav__link">
+    %status
   </a>
   
 </li>
@@ -784,7 +838,7 @@ S_MACH:    PC (64-bit x86-64)
 <div class="codehilite"><pre><span></span>%set [-h] [--permanently] [--reset] key value
 </pre></div></p>
 <ul>
-<li><code>key</code>: Configuration key name. The full list of configuration options is shown on the <a href="../../getting_started/#configuration">Getting Started</a> page.</li>
+<li><code>key</code>: Configuration key name. The full list of configuration options is shown on the <a href="../configuration/">Configuration</a> page.</li>
 <li><code>value</code>: Value to set.</li>
 <li><code>--permanently</code>: Store settings permanently.</li>
 <li><code>--reset</code>: Restore default settings.</li>
@@ -796,6 +850,17 @@ S_MACH:    PC (64-bit x86-64)
 %set graph_height 300
 </pre></div>
 
+<h2 id="show_gui"><code>%show_gui</code><a class="headerlink" href="#show_gui" title="Permanent link">&para;</a></h2>
+<p>Show Stata Graphical User Interface. Only works on Windows (and Mac if using automation execution mode)"</p>
+<h2 id="hide_gui"><code>%hide_gui</code><a class="headerlink" href="#hide_gui" title="Permanent link">&para;</a></h2>
+<p>Hide Stata Graphical User Interface. Only works on Windows (and Mac if using automation execution mode)"</p>
+<h2 id="status"><code>%status</code><a class="headerlink" href="#status" title="Permanent link">&para;</a></h2>
+<p>Print information about:</p>
+<ul>
+<li>Stata kernel version</li>
+<li>Whether you're in Stata/Mata</li>
+<li>Current delimiter</li>
+</ul>
 <!-- ## `%time`
 
 **Time Execution of a Command**
@@ -825,7 +890,7 @@ This timing is currently most exact on macOS and Linux using the console method 
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../intro/" title="Introduction" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../configuration/" title="Configuration" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -834,7 +899,7 @@ This timing is currently most exact on macOS and Linux using the console method 
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Introduction
+                Configuration
               </span>
             </div>
           </a>
