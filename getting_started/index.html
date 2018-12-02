@@ -299,6 +299,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#using" title="Using" class="md-nav__link">
+    Using
+  </a>
+  
+</li>
+      
       
       
       
@@ -596,6 +603,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#using" title="Using" class="md-nav__link">
+    Using
+  </a>
+  
+</li>
+      
       
       
       
@@ -619,17 +633,15 @@
 <p>It doesn't take much to get <code>stata_kernel</code> up and running. Here's how:</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <ul>
+<li><strong>Stata</strong>. A currently-licensed version of Stata must already be installed. <code>stata_kernel</code> has been reported to work with at least Stata 13+, and may work with Stata 12.</li>
 <li>
 <p><strong>Python</strong>. In order to install the kernel, Python 3.5, 3.6, or 3.7 needs to be installed on the computer on which Stata is running.</p>
 <p>I suggest installing the <a href="https://www.anaconda.com/download/">Anaconda
 distribution</a>. This doesn't require
-administrator privileges, and is the simplest way to install Python.</p>
-<p>If you don't install Python through Anaconda, you may need to install some
-dependencies manually, like <a href="https://cython.org/#download">Cython</a>.</p>
-<p>The Anaconda installer includes many third party libraries for Python that
+administrator privileges, and is the simplest way to install Python and many of the most popular scientific packages.</p>
+<p>The full Anaconda installation is quite large, and includes many libraries for Python that
 <code>stata_kernel</code> doesn't use. If you don't plan to use Python and want to use
-less disk space, install <a href="https://conda.io/miniconda.html">Miniconda</a>, which
-includes few packages other than Python. Then when <a href="#package-install">installing the package</a> any other necessary dependencies will be
+less disk space, install <a href="https://conda.io/miniconda.html">Miniconda</a>, a bare-bones version of Anaconda. Then when <a href="#package-install">installing the package</a> any other necessary dependencies will be
 downloaded automatically.</p>
 </li>
 </ul>
@@ -639,10 +651,6 @@ downloaded automatically.</p>
 python -m stata_kernel.install
 </pre></div>
 
-<p>The second command will try to find your Stata executable, and will warn you if
-it can't. In that case, you'll have to set it yourself. Refer to the
-<a href="../using_stata_kernel/configuration/">configuration</a> settings.</p>
-<p><code>python -m stata_kernel.install</code> only needs to be run <em>once ever</em>.</p>
 <p>If Python 2 is the default version of Python on your system, you may need to use
 <div class="codehilite"><pre><span></span>pip3 install stata_kernel
 python3 -m stata_kernel.install
@@ -652,6 +660,10 @@ python3 -m stata_kernel.install
 </pre></div>
 
 <p>When upgrading, you don't have to run <code>python -m stata_kernel.install</code> again.</p>
+<h2 id="using">Using<a class="headerlink" href="#using" title="Permanent link">&para;</a></h2>
+<p>Next, read more about <a href="../using_jupyter/intro/">Jupyter and its different
+interfaces</a> or about <a href="../using_stata_kernel/intro/">how to use the Stata
+kernel</a>, specifically.</p>
                 
                   
                 
