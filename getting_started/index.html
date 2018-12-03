@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0, mkdocs-material-3.0.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
     
     
       
@@ -60,8 +60,8 @@
       <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
     
     
-      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
       
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,400i,700|Fira+Code">
         <style>body,input{font-family:"Nunito Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Code","Courier New",Courier,monospace}</style>
       
@@ -297,6 +297,32 @@
     Package Install
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#upgrading" title="Upgrading" class="md-nav__link">
+    Upgrading
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#release-notifications" title="Release notifications" class="md-nav__link">
+    Release notifications
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -354,8 +380,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../using_jupyter/notebook/" title="Jupyter Notebook" class="md-nav__link">
-      Jupyter Notebook
+    <a href="../using_jupyter/lab/" title="JupyterLab" class="md-nav__link">
+      JupyterLab
     </a>
   </li>
 
@@ -378,8 +404,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../using_jupyter/lab/" title="JupyterLab" class="md-nav__link">
-      JupyterLab
+    <a href="../using_jupyter/notebook/" title="Jupyter Notebook" class="md-nav__link">
+      Jupyter Notebook
     </a>
   </li>
 
@@ -601,6 +627,32 @@
     Package Install
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#upgrading" title="Upgrading" class="md-nav__link">
+    Upgrading
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#release-notifications" title="Release notifications" class="md-nav__link">
+    Release notifications
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -649,17 +701,28 @@ downloaded automatically.</p>
 <p>To install the kernel, from a terminal or command prompt run:</p>
 <div class="codehilite"><pre><span></span>pip install stata_kernel
 python -m stata_kernel.install
+<span class="c1"># Syntax highlighting in JupyterLab</span>
+jupyter labextension install jupyterlab-stata-highlight
 </pre></div>
 
 <p>If Python 2 is the default version of Python on your system, you may need to use
 <div class="codehilite"><pre><span></span>pip3 install stata_kernel
 python3 -m stata_kernel.install
+<span class="c1"># Syntax highlighting in JupyterLab</span>
+jupyter labextension install jupyterlab-stata-highlight
 </pre></div></p>
+<h3 id="upgrading">Upgrading<a class="headerlink" href="#upgrading" title="Permanent link">&para;</a></h3>
 <p>To upgrade from a previous version of <code>stata_kernel</code>, from a terminal or command prompt run</p>
 <div class="codehilite"><pre><span></span>pip install stata_kernel --upgrade
 </pre></div>
 
 <p>When upgrading, you don't have to run <code>python -m stata_kernel.install</code> again.</p>
+<h4 id="release-notifications">Release notifications<a class="headerlink" href="#release-notifications" title="Permanent link">&para;</a></h4>
+<p>If you'd like to be notified when a new version of <code>stata_kernel</code> is released,
+you can <a href="https://github.com/join">create a GitHub account</a>, then go to <a href="https://github.com/kylebarron/stata_kernel">the
+project homepage</a>, and in the top
+right, click "Watch" and select "Releases Only".</p>
+<p><img alt="subscribe-to-releases" src="../img/subscribe-to-releases.png" /></p>
 <h2 id="using">Using<a class="headerlink" href="#using" title="Permanent link">&para;</a></h2>
 <p>Next, read more about <a href="../using_jupyter/intro/">Jupyter and its different
 interfaces</a> or about <a href="../using_stata_kernel/intro/">how to use the Stata
@@ -748,7 +811,7 @@ kernel</a>, specifically.</p>
     
       <script src="../assets/javascripts/application.583bbe55.js"></script>
       
-      <script>app.initialize({version:"1.0",url:{base:".."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
     
     

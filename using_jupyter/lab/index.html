@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0, mkdocs-material-3.0.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
     
     
       
@@ -60,8 +60,8 @@
       <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
     
     
-      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
       
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,400i,700|Fira+Code">
         <style>body,input{font-family:"Nunito Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Code","Courier New",Courier,monospace}</style>
       
@@ -302,11 +302,70 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../notebook/" title="Jupyter Notebook" class="md-nav__link">
-      Jupyter Notebook
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        JupyterLab
+      </label>
+    
+    <a href="./" title="JupyterLab" class="md-nav__link md-nav__link--active">
+      JupyterLab
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#starting-jupyterlab" title="Starting JupyterLab" class="md-nav__link">
+    Starting JupyterLab
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syntax-highlighting" title="Syntax highlighting" class="md-nav__link">
+    Syntax highlighting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plugins" title="Plugins" class="md-nav__link">
+    Plugins
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-info" title="More info" class="md-nav__link">
+    More info
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -326,20 +385,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" title="JupyterLab" class="md-nav__link md-nav__link--active">
-      JupyterLab
+  <li class="md-nav__item">
+    <a href="../notebook/" title="Jupyter Notebook" class="md-nav__link">
+      Jupyter Notebook
     </a>
-    
   </li>
 
         
@@ -545,6 +595,43 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#starting-jupyterlab" title="Starting JupyterLab" class="md-nav__link">
+    Starting JupyterLab
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syntax-highlighting" title="Syntax highlighting" class="md-nav__link">
+    Syntax highlighting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plugins" title="Plugins" class="md-nav__link">
+    Plugins
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-info" title="More info" class="md-nav__link">
+    More info
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -559,6 +646,20 @@
                 
                 
                 <h1 id="jupyterlab">JupyterLab<a class="headerlink" href="#jupyterlab" title="Permanent link">&para;</a></h1>
+<p>Jupyter Lab is the successor to <a href="../notebook/">Jupyter Notebook</a>, and allows for having multiple documents side-by-side.</p>
+<h3 id="starting-jupyterlab">Starting JupyterLab<a class="headerlink" href="#starting-jupyterlab" title="Permanent link">&para;</a></h3>
+<p>You can start JupyterLab by running:</p>
+<div class="codehilite"><pre><span></span>jupyter lab
+</pre></div>
+
+<p>in your terminal or command prompt. Just like the Notebook, this should open up a page in your browser, where you can open a new Stata notebook or console.</p>
+<h3 id="syntax-highlighting">Syntax highlighting<a class="headerlink" href="#syntax-highlighting" title="Permanent link">&para;</a></h3>
+<p>To enable syntax highlighting for Stata with JupyterLab, you need to run (only once):
+<div class="codehilite"><pre><span></span>jupyter labextension install jupyterlab-stata-highlight
+</pre></div></p>
+<h3 id="plugins">Plugins<a class="headerlink" href="#plugins" title="Permanent link">&para;</a></h3>
+<p>One of the benefits of JupyterLab over the Notebook is that it was designed for extensibility. There's a growing list of plugins that can be used with JupyterLab. Here's an unofficial list: <a href="https://github.com/mauhai/awesome-jupyterlab">github.com/mauhai/awesome-jupyterlab</a></p>
+<h3 id="more-info">More info<a class="headerlink" href="#more-info" title="Permanent link">&para;</a></h3>
 <p>Project documentation website:
 <a href="https://jupyterlab.readthedocs.io/en/stable/">jupyterlab.readthedocs.io/en/stable/</a></p>
 <p><img alt="" src="https://jupyterlab.readthedocs.io/en/stable/_images/jupyterlab.png" /></p>
@@ -582,7 +683,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../atom/" title="Hydrogen in Atom" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../intro/" title="Introduction" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -591,19 +692,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Hydrogen in Atom
+                Introduction
               </span>
             </div>
           </a>
         
         
-          <a href="../nteract/" title="Nteract" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../atom/" title="Hydrogen in Atom" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Nteract
+                Hydrogen in Atom
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -646,7 +747,7 @@
     
       <script src="../../assets/javascripts/application.583bbe55.js"></script>
       
-      <script>app.initialize({version:"1.0",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
     
     
