@@ -701,16 +701,17 @@ downloaded automatically.</p>
 <p>To install the kernel, from a terminal or command prompt run:</p>
 <div class="codehilite"><pre><span></span>pip install stata_kernel
 python -m stata_kernel.install
-<span class="c1"># Syntax highlighting in JupyterLab</span>
-jupyter labextension install jupyterlab-stata-highlight
 </pre></div>
 
 <p>If Python 2 is the default version of Python on your system, you may need to use
 <div class="codehilite"><pre><span></span>pip3 install stata_kernel
 python3 -m stata_kernel.install
-<span class="c1"># Syntax highlighting in JupyterLab</span>
+</pre></div></p>
+<p>In order to get syntax highlighting in Jupyter Lab, run:
+<div class="codehilite"><pre><span></span>conda install -c conda-forge nodejs -y
 jupyter labextension install jupyterlab-stata-highlight
 </pre></div></p>
+<p>If you didn't install Python from Anaconda, the <code>conda</code> command won't work and you'll need to install <a href="https://nodejs.org/en/download/">Node.js</a> directly before running <code>jupyter labextension install</code>.</p>
 <h3 id="upgrading">Upgrading<a class="headerlink" href="#upgrading" title="Permanent link">&para;</a></h3>
 <p>To upgrade from a previous version of <code>stata_kernel</code>, from a terminal or command prompt run</p>
 <div class="codehilite"><pre><span></span>pip install stata_kernel --upgrade
