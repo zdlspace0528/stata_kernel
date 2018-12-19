@@ -835,13 +835,17 @@ of Stata to run at the same time, and can be faster. <code>automation</code> sup
 <p>an integer. This is the height in pixels of graphs displayed.</p>
 <h3 id="user_graph_keywords"><code>user_graph_keywords</code><a class="headerlink" href="#user_graph_keywords" title="Permanent link">&para;</a></h3>
 <p>a string. <code>stata_kernel</code> <a href="../intro/#displaying-graphs">displays graphs</a> by quietly inserting a <code>graph export</code> command after any command that creates a graph, and then loading and displaying the saved file. By default, it only looks for the base list of graph commands.</p>
-<div class="codehilite"><pre><span></span>If you use third party commands that generate figures, this option allows you to provide a list of commands that will also display graphs. Provide multiple graph names as a comma-delimited string, e.g. in the configuration file add:
-
-```
-user_graph_keywords = vioplot, coefplot
-```
+<p>If you use third party commands that generate figures, this option allows you to provide a list of commands that will also display graphs. Provide multiple graph names as a comma-delimited string, e.g. in the configuration file add:</p>
+<div class="codehilite"><pre><span></span>user_graph_keywords = vioplot,coefplot
 </pre></div>
 
+<p>Note that when using the <a href="../magics/#set"><code>%set</code> magic</a>, the list of comma-delimited keywords must not have any spaces in it. For example, you must run</p>
+<div class="codehilite"><pre><span></span>%set user_graph_keywords vioplot,coefplot
+</pre></div>
+
+<p>and not</p>
+<div class="codehilite"><pre><span></span>%set user_graph_keywords vioplot, coefplot
+</pre></div>
 
 <h3 id="graph_svg_redundancy"><code>graph_svg_redundancy</code><a class="headerlink" href="#graph_svg_redundancy" title="Permanent link">&para;</a></h3>
 <p>Whether to provide redundant PDF images when <code>svg</code> is the display format. <code>True</code> by default.
