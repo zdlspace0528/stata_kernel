@@ -796,10 +796,10 @@
                 
                 
                 <h1 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h1>
-<p>The configuration file is named <code>.stata_kernel.conf</code> and is located in your home
-directory. You can change any of the package's settings by opening the file and
-changing the <code>value</code> of any line of the form</p>
-<div class="codehilite"><pre><span></span>configuration_setting = value
+<p>The configuration file is a plain text file named <code>.stata_kernel.conf</code> and is
+located in your home directory. You can change any of the package's settings by
+opening the file and changing the <code>value</code> of any line of the form</p>
+<div class="codehilite"><pre><span></span>configuration_setting_name = value
 </pre></div>
 
 <p>You can also make changes to the configuration while the kernel is running with the <a href="../magics/#set">%set magic</a>. For example:</p>
@@ -812,7 +812,7 @@ changing the <code>value</code> of any line of the form</p>
 </pre></div></p>
 <h2 id="general-settings">General settings<a class="headerlink" href="#general-settings" title="Permanent link">&para;</a></h2>
 <h3 id="stata_path"><code>stata_path</code><a class="headerlink" href="#stata_path" title="Permanent link">&para;</a></h3>
-<p>A string; the path on your file system to your Stata executable. Usually this can be found automatically during the <a href="../../getting_started/#package-install">install step</a>, but sometimes may need to be set manually.</p>
+<p>A string; the path on your file system to your Stata executable. Usually this can be found automatically during the <a href="../../getting_started/#package-install">install step</a>, but sometimes may need to be set manually. This cannot be changed while using <code>%set</code>, and must be edited in the configuration file before starting Jupyter.</p>
 <h3 id="cache_directory"><code>cache_directory</code><a class="headerlink" href="#cache_directory" title="Permanent link">&para;</a></h3>
 <p>A string; the directory for the kernel to store temporary log files and graphs. By default, this is <code>~/.stata_kernel_cache</code>, where <code>~</code> means your home directory. You may wish to change this location if, for example, you're working under a Data Use Agreement where all related files must be stored in a specific directory.</p>
 <h3 id="execution_mode"><code>execution_mode</code><a class="headerlink" href="#execution_mode" title="Permanent link">&para;</a></h3>
