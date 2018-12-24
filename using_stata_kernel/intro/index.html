@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
+      <meta name="generator" content="mkdocs-1.0, mkdocs-material-3.0.3">
     
     
       
@@ -60,8 +60,8 @@
       <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
     
     
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
       
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,400i,700|Fira+Code">
         <style>body,input{font-family:"Nunito Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Code","Courier New",Courier,monospace}</style>
       
@@ -270,15 +270,27 @@
       
 
 
+  <li class="md-nav__item">
+    <a href="https://nbviewer.jupyter.org/github/kylebarron/stata_kernel/blob/master/examples/Example.ipynb" title="Jupyter Notebook Example" class="md-nav__link">
+      Jupyter Notebook Example
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
-    <label class="md-nav__link" for="nav-3">
+    <label class="md-nav__link" for="nav-4">
       Using Jupyter
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
+      <label class="md-nav__title" for="nav-4">
         Using Jupyter
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -394,13 +406,13 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
     
-    <label class="md-nav__link" for="nav-4">
+    <label class="md-nav__link" for="nav-5">
       Using the Stata Kernel
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
+      <label class="md-nav__title" for="nav-5">
         Using the Stata Kernel
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -687,7 +699,7 @@
                 
                 <h1 id="using-the-stata-kernel">Using the Stata Kernel<a class="headerlink" href="#using-the-stata-kernel" title="Permanent link">&para;</a></h1>
 <p><code>stata_kernel</code> is the bridge between Stata and the Jupyter ecosystem. It will work with any of the tools outlined in <a href="../../using_jupyter/intro/">Using Jupyter</a>. After <a href="../../getting_started/">installing</a> and optionally <a href="../configuration/">configuring</a> <code>stata_kernel</code>, it should be ready for use.</p>
-<p>On the rest of this page, you can learn more about some of the features <code>stata_kernel</code> provides.</p>
+<p>I recommend browsing <a href="https://nbviewer.jupyter.org/github/kylebarron/stata_kernel/blob/master/examples/Example.ipynb">this example Jupyter Notebook file</a> to see many of <code>stata_kernel</code>'s features in action. If you <a href="https://raw.githubusercontent.com/kylebarron/stata_kernel/master/examples/Example.ipynb">download that file</a> and load it into <a href="../../using_jupyter/lab/">JupyterLab</a>, you can edit the cells to try it out interactively.</p>
 <h2 id="displaying-graphs">Displaying graphs<a class="headerlink" href="#displaying-graphs" title="Permanent link">&para;</a></h2>
 <p><code>stata_kernel</code> displays graphs by quietly inserting a <code>graph export</code> command after any command that creates a graph, and then loading and displaying the saved file. The advantage of this approach is that it will display <em>all</em> graphs created, even inside a loop or program, as long as that program was defined in text you run with the kernel.</p>
 <p>To minimize false positives, the graph keyword must appear at the beginning of a line. To hide the display of a graph, just prefix <code>graph</code> with <a href="https://www.stata.com/help.cgi?quietly"><code>quietly</code></a>.</p>
@@ -700,7 +712,7 @@
 <p>To display graphs from user created commands, add the command name to the
 <a href="../../getting_started#user_graph_keywords"><code>user_graph_keywords</code></a> setting. You
 can do this either in the configuration file before starting the session or with
-<div class="codehilite"><pre><span></span>%set user_graph_keywords command1, command2, ...
+<div class="codehilite"><pre><span></span>%set user_graph_keywords command1,command2,...
 </pre></div>
 during the session.</p>
 <h3 id="graph-display-format">Graph display format<a class="headerlink" href="#graph-display-format" title="Permanent link">&para;</a></h3>
@@ -821,7 +833,7 @@ debugging code difficult.</p>
     
       <script src="../../assets/javascripts/application.583bbe55.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.0",url:{base:"../.."}})</script>
       
     
     
