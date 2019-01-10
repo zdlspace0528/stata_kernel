@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0, mkdocs-material-3.0.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
     
     
       
@@ -60,8 +60,8 @@
       <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
     
     
-      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
       
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,400i,700|Fira+Code">
         <style>body,input{font-family:"Nunito Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Code","Courier New",Courier,monospace}</style>
       
@@ -506,8 +506,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#running" title="Running" class="md-nav__link">
-    Running
+  <a href="#graphs-wont-display" title="Graphs won't display" class="md-nav__link">
+    Graphs won't display
   </a>
   
 </li>
@@ -604,8 +604,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#running" title="Running" class="md-nav__link">
-    Running
+  <a href="#graphs-wont-display" title="Graphs won't display" class="md-nav__link">
+    Graphs won't display
   </a>
   
 </li>
@@ -642,18 +642,22 @@
 <p>If you have multiple installations of Python on your machine, make sure you run <code>python -m stata_kernel.install</code> during installation with the same Python executable as the one you usually use. This matters especially when using several Python virtual environments. You'll need to install <code>stata_kernel</code> within each environment you use.</p>
 </li>
 </ul>
-<h2 id="running">Running<a class="headerlink" href="#running" title="Permanent link">&para;</a></h2>
+<h2 id="graphs-wont-display">Graphs won't display<a class="headerlink" href="#graphs-wont-display" title="Permanent link">&para;</a></h2>
 <ul>
+<li>If you're using a user-written command to generate your graph, you'll need to add that command to the <a href="../configuration/#user_graph_keywords">list of graph keywords</a>.</li>
 <li>
-<p>If you're on Windows, and upon trying to start <code>stata_kernel</code> you see an error message in the terminal window that ends with:</p>
-<div class="codehilite"><pre><span></span>pywintypes.com_error: (-2147221005, &#39;Invalid class string&#39;, None, None)
+<p>If you're on Windows and using Edge as your browser, SVG images won't work. This is a known issue.</p>
+<p>Easy solutions:</p>
+<ul>
+<li>Don't use Internet Explorer/Edge</li>
+<li>
+<p>Set the graph format to PNG instead of SVG. Run one of the following to <a href="../configuration/#graph_format">change the graph's storage format</a>:</p>
+<div class="codehilite"><pre><span></span>%set graph_format png
+%set graph_format png --permanently
 </pre></div>
 
-<p>That means that the Stata type library has not been correctly registered, so
-<code>stata_kernel</code> is unable to communicate with Stata. See the <a href="../../getting_started#prerequisites">instructions
-here</a> (under "Windows-specific steps")
-for how to register the type library. It is not necessary to reinstall
-<code>stata_kernel</code> after this.</p>
+</li>
+</ul>
 </li>
 </ul>
                 
@@ -740,7 +744,7 @@ for how to register the type library. It is not necessary to reinstall
     
       <script src="../../assets/javascripts/application.583bbe55.js"></script>
       
-      <script>app.initialize({version:"1.0",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
     
     
