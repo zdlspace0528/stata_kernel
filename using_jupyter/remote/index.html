@@ -768,12 +768,10 @@
 <p>There are two ways to use Jupyter on a remote Unix/Linux server.</p>
 <ul>
 <li>
-<p>The less-usable way, but which is simpler to get started with, is simply using <a href="../console">Jupyter Console</a> within a remote terminal. This gives you many—but not all—of the features of <code>stata_kernel</code>, including syntax highlighting, free-flowing comments, autocompletions, and <code>#delimit ;</code> support. To do this, all you need to do is install <code>stata_kernel</code> on the remote server (Stata must also be installed on that remote server).</p>
+<p>The less-usable way, but which is simpler to get started with, is simply using <a href="../console/">Jupyter Console</a> within a remote terminal. This gives you many—but not all—of the features of <code>stata_kernel</code>, including syntax highlighting, free-flowing comments, autocompletions, and <code>#delimit ;</code> support. To do this, all you need to do is install <code>stata_kernel</code> on the remote server (Stata must also be installed on that remote server).</p>
 </li>
 <li>
-<p>The much more powerful way to run Jupyter on a remote server is to set it up so that you're working with Jupyter Notebook in your local web browser, or with Hydrogen in Atom running locally, but where all the computation happens on the remote server. This is a little more involved to set up, but, once running, makes working on a remote server effortless.</p>
-<p>This setup is one of my favorite parts of Jupyter. The only information communicated to the server is the input command as text, and the only information communicated back from the server to the local computer is the output of the command. Since very little information is sent back and forth, this setup has very low latency, which means that it's fast even on slower networks: if you're waiting on output, it's likely because Stata is slow, not the connection.</p>
-<p>When using a program like <code>tmux</code> or <code>screen</code> on the server, you can reconnect <em>to the same Jupyter kernel</em> (and thus the same Stata session) after becoming disconnected from the network (i.e. if a VPN times out). In contrast, with a normal console or GUI Stata session, there is no way to reconnect to the running Stata session, and you'd have to recreate the state of the environment from scratch.</p>
+<p>The much more powerful way to run Jupyter on a remote server is to set it up so that you're working with <a href="../lab/">JupyterLab</a> in your local web browser, or with <a href="../atom/">Hydrogen</a> in Atom running locally, but where all the computation happens on the remote server. This is a little more involved to set up, but, once running, makes working on a remote server effortless.</p>
 </li>
 </ul>
 <p>The rest of this document explains how to set up the latter method.</p>
@@ -785,18 +783,22 @@ Notebook server without a password could allow an attacker to run arbitrary
 code on your computer, conceivably accessing private data or deleting files.</p>
 </div>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>This setup is one of my favorite parts of Jupyter. Since very little information is sent back and forth, this setup has very low latency, which means that it's fast even on slower networks. With this setup, if you're waiting on output, it's likely because Stata is slow, not the connection.</p>
+<p>When using a program like <code>tmux</code> or <code>screen</code> on the server, you can reconnect <em>to the same Jupyter kernel</em> (and thus the same Stata session) after becoming disconnected from the network (i.e. if a VPN times out). In contrast, with a normal console or GUI Stata session, there is no way to reconnect to the running Stata session, and you'd have to recreate the state of the environment from scratch.</p>
 <p>To understand how to set this up, it's helpful to know a bit about how Jupyter works.
-Jupyter has a client-server model:</p>
+Jupyter has a "client-server model":</p>
 <ul>
 <li>the <em>client</em> (i.e. the Notebook, Hydrogen, or console) accepts user input and displays output.</li>
 <li>the <em>server</em> (the Jupyter internals) receives input from the client, forwards it to Stata, retrieves the results, and sends them back to the client.</li>
 </ul>
 <p>Usually, both the client and server run on the same computer.
-However, because these are two separate programs, this is not a requirement. They just need to be able to communicate with each other.</p>
-<p>When working with remote servers, you'll instead run the client on the computer you're physically touching and the server on the computer on which computation should happen.</p>
+However, this is not a requirement; they just need to be able to communicate with each other.</p>
+<p>When working with remote servers, you'll instead run the client on the computer you're physically at and the server on the computer on which computation should happen.</p>
 <h3 id="network-ports">Network Ports<a class="headerlink" href="#network-ports" title="Permanent link">&para;</a></h3>
-<p>A network <a href="https://en.wikipedia.org/wiki/Port_(computer_networking)"><em>port</em></a> is a logical construct that simplifies client-server communication and allows for many different types of communication on the same computer.</p>
-<p>By default, the Jupyter server process runs on port <code>8888</code>. This is why, when you open up Jupyter Notebook in your web browser, you'll usually see <code>http://localhost:8888</code> in the address bar. This means that the Jupyter server process is emitting data on port <code>8888</code> on the local computer.</p>
+<p>A network <a href="https://en.wikipedia.org/wiki/Port_(computer_networking)"><em>port</em></a> is a numbered entity that defines what type of communication to access.</p>
+<p>For example, HTTP which defines how websites are loaded in your browser, runs on a specific port (80). So going to <a href="http://example.com">example.com</a> in your browser is the same as going to <a href="http://example.com:80">example.com:80</a>. The <code>:80</code> is just usually omitted.</p>
+<p>Instead of loading web pages, we need to configure it so that your browser loads the data from <em>Jupyter</em>.</p>
+<p>By default, the Jupyter server process runs on port <code>8888</code>. This is why, when you run Jupyter Notebook on your local machine, you'll usually see <code>http://localhost:8888</code> in the address bar. This means that the Jupyter server process is emitting data on port <code>8888</code> on the local computer.</p>
 <p>When working with Jupyter remotely, you'll have to know what port Jupyter is running on so that you can <em>forward</em> the remote port to your local computer during the SSH connection. This is the core of the step that connects the server process on the remote computer to the client process on the local computer.</p>
 <h2 id="set-up">Set up<a class="headerlink" href="#set-up" title="Permanent link">&para;</a></h2>
 <p>There are two options for what to use on the server:</p>
@@ -834,12 +836,20 @@ through SSH. Setting up an SSH server is outside the scope of this guide.</p>
 
 <h4 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h4>
 <p><img alt="Mobaxterm local port forwarding" src="../../img/mobaxterm-local-port-forwarding.png" /></p>
-<p><a href="https://blog.mobatek.net/post/ssh-tunnels-and-port-forwarding/#simple-explanation-of-ssh-tunnels-and-port-forwarding:b8ebdf9b2cb412a3a77c16c73c0d31ed">Here's information</a> for how to forward a remote port using Mobaxterm. In MobaXterm, go to Tools &gt; MobaxtermTunnel &gt; New. You want:</p>
+<p><a href="https://blog.mobatek.net/post/ssh-tunnels-and-port-forwarding/#simple-explanation-of-ssh-tunnels-and-port-forwarding:b8ebdf9b2cb412a3a77c16c73c0d31ed">Here's information</a> for how to forward a remote port using Mobaxterm. In MobaXterm, go to Tools &gt; MobaxtermTunnel &gt; New and select <code>Local port forwarding</code>. The most common configuration, clockwise from left, is:</p>
 <ul>
-<li>select <code>Local port forwarding</code></li>
+<li><code>8888</code></li>
+<li><code>localhost</code></li>
+<li><code>8888</code></li>
+<li>the server hostname, i.e. <code>server.org</code> or its full IP address</li>
+<li>your username, i.e. <code>john_doe</code></li>
+<li><code>22</code></li>
+</ul>
+<p>Full explanation, clockwise from left</p>
+<ul>
 <li>The "My computer with MobaXterm" box on the left (<code>12345</code> in the image) is customarily <code>8888</code>, though it can be any 4- or 5-digit number. This is the number you'll type into your local web browser, i.e. <code>http://localhost:8888</code>.</li>
-<li>The "SSH server" box in the bottom right should have your server's hostname and username.</li>
-<li>The "Remote server" box in the top right should have your server's hostname again and then the port on which Jupyter is running. Usually this is <code>8888</code>.</li>
+<li>The "Remote server" box in the top right should usually have <code>localhost</code> and then the port on which Jupyter is running. Usually this is <code>8888</code>.</li>
+<li>The "SSH server" box in the bottom right should have your server's hostname and username, and the port on which SSH is running (usually <code>22</code>).</li>
 </ul>
 <h3 id="starting-jupyter-notebook">Starting Jupyter Notebook<a class="headerlink" href="#starting-jupyter-notebook" title="Permanent link">&para;</a></h3>
 <p>Run <code>jupyter notebook --no-browser --port=8888</code> in the remote terminal.</p>
