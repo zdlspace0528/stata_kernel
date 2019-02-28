@@ -13,7 +13,7 @@
         <meta name="description" content="A Jupyter Kernel for Stata. Works with Windows, macOS, and Linux.">
       
       
-        <link rel="canonical" href="https://kylebarron.github.io/stata_kernel/CONTRIBUTING/">
+        <link rel="canonical" href="https://kylebarron.dev/stata_kernel/CONTRIBUTING/">
       
       
         <meta name="author" content="Kyle Barron">
@@ -113,7 +113,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="https://kylebarron.github.io/stata_kernel/" title="stata_kernel" class="md-header-nav__button md-logo">
+        <a href="https://kylebarron.dev/stata_kernel/" title="stata_kernel" class="md-header-nav__button md-logo">
           
             <i class="md-icon">home</i>
           
@@ -209,7 +209,7 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="https://kylebarron.github.io/stata_kernel/" title="stata_kernel" class="md-nav__button md-logo">
+    <a href="https://kylebarron.dev/stata_kernel/" title="stata_kernel" class="md-nav__button md-logo">
       
         <i class="md-icon">home</i>
       
@@ -533,6 +533,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#debugging" title="Debugging" class="md-nav__link">
+    Debugging
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tests" title="Tests" class="md-nav__link">
     Tests
   </a>
@@ -636,6 +643,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#debugging" title="Debugging" class="md-nav__link">
+    Debugging
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tests" title="Tests" class="md-nav__link">
     Tests
   </a>
@@ -705,6 +719,24 @@
 </ul>
 <h2 id="bug-reports">Bug reports<a class="headerlink" href="#bug-reports" title="Permanent link">&para;</a></h2>
 <p>The best way to get your issue solved is to provide a <a href="https://stackoverflow.com/help/mcve">minimal, complete, verifiable example.</a> In order to submit a bug report, <a href="https://github.com/kylebarron/stata_kernel/issues/new/choose">click here</a> and fill out the template.</p>
+<h2 id="debugging">Debugging<a class="headerlink" href="#debugging" title="Permanent link">&para;</a></h2>
+<p>The following seems to be the easiest way to debug internals:</p>
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">stata_kernel.kernel</span> <span class="kn">import</span> <span class="n">StataKernel</span>
+<span class="kn">from</span> <span class="nn">stata_kernel.code_manager</span> <span class="kn">import</span> <span class="n">CodeManager</span>
+
+<span class="n">kernel</span> <span class="o">=</span> <span class="n">StataKernel</span><span class="p">()</span>
+<span class="n">session</span> <span class="o">=</span> <span class="n">kernel</span><span class="o">.</span><span class="n">stata</span>
+
+<span class="c1"># If on windows, may be helpful</span>
+<span class="n">session</span><span class="o">.</span><span class="n">show_gui</span><span class="p">()</span>
+
+<span class="n">code</span> <span class="o">=</span> <span class="s1">&#39;sysuse auto, clear&#39;</span>
+<span class="n">cm</span> <span class="o">=</span> <span class="n">CodeManager</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
+<span class="n">text_to_run</span><span class="p">,</span> <span class="n">md5</span><span class="p">,</span> <span class="n">text_to_exclude</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="n">kernel</span><span class="o">.</span><span class="n">conf</span><span class="p">,</span> <span class="n">session</span><span class="p">)</span>
+<span class="n">rc</span><span class="p">,</span> <span class="n">res</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">do</span><span class="p">(</span>
+    <span class="n">text_to_run</span><span class="p">,</span> <span class="n">md5</span><span class="p">,</span> <span class="n">text_to_exclude</span><span class="o">=</span><span class="n">text_to_exclude</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</pre></div>
+
 <h2 id="tests">Tests<a class="headerlink" href="#tests" title="Permanent link">&para;</a></h2>
 <h3 id="adding-tests">Adding tests<a class="headerlink" href="#adding-tests" title="Permanent link">&para;</a></h3>
 <p>Tests are contained in the Python files in the <code>tests/</code> folder. The <code>test_stata_lexer.py</code> and <code>test_mata_lexer.py</code> files run automated tests on the code Stata kernel uses to parse user input.</p>
