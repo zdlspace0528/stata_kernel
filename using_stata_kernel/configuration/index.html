@@ -833,6 +833,28 @@ opening the file and changing the <code>value</code> of any line of the form</p>
 <p><code>console</code> is the default because it allows for multiple independent sessions
 of Stata to run at the same time, and can be faster. <code>automation</code> supports running <code>browse</code>, to bring up the Stata data explorer, however the <a href="../magics/#browse"><code>%browse</code> magic</a> can also be used to inspect data within Jupyter (with either execution mode).</p>
 <p>On Windows, all communication with Stata happens through Stata Automation, because Stata console doesn't exist for Windows. On Linux/Unix all communication happens through the console, because Stata Automation doesn't exist for Linux/Unix.</p>
+<details class="warning" open="open"><summary>Notice for StataIC Mac users</summary><p>The main way that <code>stata_kernel</code> communicates with the running Stata session
+on macOS and Linux is with the <em>console version</em> of Stata. This runs in a
+terminal instead of with the Stata GUI. For no good reason StataCorp decided
+not to ship the console program with StataIC on macOS.</p>
+<p>To work around this, StataIC Mac users must use <code>automation</code> execution mode.</p>
+<p>On macOS, using Automation is slower than using console mode, but there's
+nothing I can do about it. I asked StataCorp why they don't ship a console
+version with StataIC on Mac, when they do on Linux. Basically you're not a
+"power user".</p>
+<blockquote>
+<p>Unix operating systems often have an optional graphical user interface so we
+need to include console versions of Stata for all flavors of Stata on those
+systems.</p>
+<p>The Mac operating system always has a graphical user interface so the console
+version of Stata on the Mac is a special tool that is included for power users.
+The Stata/IC for Mac is designed for regular Stata users and does not include a
+console version.</p>
+<p>Originally the Mac versions of Stata were just like the Windows versions and
+did not have any console support.</p>
+</blockquote>
+<p>- Stata Technical Support</p>
+</details>
 <h3 id="autocomplete_closing_symbol"><code>autocomplete_closing_symbol</code><a class="headerlink" href="#autocomplete_closing_symbol" title="Permanent link">&para;</a></h3>
 <p>either <code>True</code> or <code>False</code>; whether autocompletion suggestions should include the closing symbol (i.e. <code>'</code> for a local macro or <code>}</code> if the global starts with <code>${</code>). This is <code>False</code> by default.</p>
 <h2 id="graph-settings">Graph settings<a class="headerlink" href="#graph-settings" title="Permanent link">&para;</a></h2>
