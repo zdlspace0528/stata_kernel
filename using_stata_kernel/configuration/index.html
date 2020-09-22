@@ -488,6 +488,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#graph_epstopng_program" class="md-nav__link">
+    graph_epstopng_program
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#graph_scale" class="md-nav__link">
     graph_scale
   </a>
@@ -719,6 +726,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#graph_epstopng_program" class="md-nav__link">
+    graph_epstopng_program
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#graph_scale" class="md-nav__link">
     graph_scale
   </a>
@@ -854,7 +868,9 @@ did not have any console support.</p>
 <h2 id="graph-settings">Graph settings<a class="headerlink" href="#graph-settings" title="Permanent link">&para;</a></h2>
 <p>These settings determine how graphs are displayed internally. <a href="../intro/#displaying-graphs">Read here</a> for more information about how <code>stata_kernel</code> displays graphs.</p>
 <h3 id="graph_format"><code>graph_format</code><a class="headerlink" href="#graph_format" title="Permanent link">&para;</a></h3>
-<p><code>svg</code> or <code>png</code>, the format to export and display graphs. By default this is <code>svg</code> for most operating systems and versions of Stata, but is <code>png</code> by default for Windows on Stata 14 and below.</p>
+<p><code>svg</code>, <code>png</code> or <code>eps</code>; the format to export graphs. By default this is <code>svg</code> for most operating systems and versions of Stata, but is <code>png</code> by default for Windows on Stata 14 and below. Note <code>eps</code> cannot be displayed by kernel front-ends and requires converting to <code>png</code> via <code>graph_epstopng_program</code>.</p>
+<h3 id="graph_epstopng_program"><code>graph_epstopng_program</code><a class="headerlink" href="#graph_epstopng_program" title="Permanent link">&para;</a></h3>
+<p>With <code>graph_format = eps</code>, a program to convert <code>eps</code> figures to <code>png</code> so they can be displayed by the kernel front-end. For example, on Linux the user can specify <code>graph_epstopng_program = convert -density 300 {0} -resize '900x600' {1}</code>.  (Note the name of the temporary graph files are passed to the program and the user must take that into account.)</p>
 <h3 id="graph_scale"><code>graph_scale</code><a class="headerlink" href="#graph_scale" title="Permanent link">&para;</a></h3>
 <p>a decimal number. This scales equally the width and height of plots displayed. By default, plots are 600 pixels wide.</p>
 <h3 id="graph_width"><code>graph_width</code><a class="headerlink" href="#graph_width" title="Permanent link">&para;</a></h3>
