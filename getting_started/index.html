@@ -258,6 +258,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#jupyter" class="md-nav__link">
+    Jupyter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#upgrading" class="md-nav__link">
     Upgrading
   </a>
@@ -600,6 +607,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#jupyter" class="md-nav__link">
+    Jupyter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#upgrading" class="md-nav__link">
     Upgrading
   </a>
@@ -662,25 +676,50 @@ downloaded automatically.</p>
 </ol>
 </details>
 <h2 id="package-install">Package Install<a class="headerlink" href="#package-install" title="Permanent link">&para;</a></h2>
-<p>To install the kernel, from a terminal or command prompt run:</p>
+<p>If you use Anaconda or Miniconda, from the Anaconda Prompt run:</p>
+<div class="highlight"><pre><span></span><code>conda install -c conda-forge stata_kernel
+python -m stata_kernel.install
+</code></pre></div>
+
+<p>If you do not use Anaconda/Miniconda, from a terminal or command prompt run:</p>
 <div class="highlight"><pre><span></span><code>pip install stata_kernel
 python -m stata_kernel.install
 </code></pre></div>
 
 <p>If Python 2 is the default version of Python on your system, you may need to use
-<div class="highlight"><pre><span></span><code>pip3 install stata_kernel
-python3 -m stata_kernel.install
-</code></pre></div></p>
+<code>python3</code> instead of <code>python</code> for the <code>python3 -m stata_kernel.install</code> step.</p>
+<h3 id="jupyter">Jupyter<a class="headerlink" href="#jupyter" title="Permanent link">&para;</a></h3>
+<p>If you chose to install Anaconda you already have <a href="https://jupyter-notebook.readthedocs.io/en/stable/notebook.html">Jupyter Notebook</a> and <a href="https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html">Jupyter Lab</a> installed.</p>
+<p>Otherwise, you need to install Jupyter Notebook or Jupyter Lab. I recommend the latter as it is a similar but more modern environment. If you have Miniconda, open the Anaconda Prompt and run:</p>
+<div class="highlight"><pre><span></span><code>conda install jupyterlab
+</code></pre></div>
+
+<p>If you use pip, you can install it via:</p>
+<div class="highlight"><pre><span></span><code>pip install jupyterlab
+</code></pre></div>
+
+<p>If you would not like to install Jupyter Lab and only need the Notebook, you can install it by running</p>
+<div class="highlight"><pre><span></span><code>conda install notebook
+</code></pre></div>
+
+<p>or</p>
+<div class="highlight"><pre><span></span><code>pip install notebook
+</code></pre></div>
+
+<p>depending on your package manager.</p>
 <p>In order to get syntax highlighting in Jupyter Lab, run:
 <div class="highlight"><pre><span></span><code>conda install -c conda-forge nodejs -y
 jupyter labextension install jupyterlab-stata-highlight
 </code></pre></div></p>
-<p>If you didn't install Python from Anaconda, the <code>conda</code> command won't work and you'll need to install <a href="https://nodejs.org/en/download/">Node.js</a> directly before running <code>jupyter labextension install</code>.</p>
+<p>If you didn't install Python from Anaconda/Miniconda, the <code>conda</code> command won't work and you'll need to install <a href="https://nodejs.org/en/download/">Node.js</a> directly before running <code>jupyter labextension install</code>.</p>
 <h3 id="upgrading">Upgrading<a class="headerlink" href="#upgrading" title="Permanent link">&para;</a></h3>
 <p>To upgrade from a previous version of <code>stata_kernel</code>, from a terminal or command prompt run</p>
-<div class="highlight"><pre><span></span><code>pip install stata_kernel --upgrade
+<p><div class="highlight"><pre><span></span><code>conda update stata_kernel -y
 </code></pre></div>
-
+in the case of Anaconda/Miniconda or</p>
+<p><div class="highlight"><pre><span></span><code>pip install stata_kernel --upgrade
+</code></pre></div>
+otherwise.</p>
 <p>When upgrading, you don't have to run <code>python -m stata_kernel.install</code> again.</p>
 <h2 id="using">Using<a class="headerlink" href="#using" title="Permanent link">&para;</a></h2>
 <p>Next, read more about <a href="../using_jupyter/intro/">Jupyter and its different
